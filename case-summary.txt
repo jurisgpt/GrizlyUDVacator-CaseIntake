@@ -1,0 +1,52 @@
+============================================================
+🏠 GrizlyUDVacator: Case Summary
+============================================================
+
+📅 Timestamp: 2025-05-15 14:58:56
+📁 Case: Tenant vs. Landlord
+
+------------------------------------------------------------
+🔍 User-Provided Facts
+------------------------------------------------------------
+- Date Served:         2025-05-15
+- Motion Filed:        2025-05-15
+- Participated:        No
+- Actual Notice:       No
+- Bad Legal Advice:    No
+
+------------------------------------------------------------
+⚖️ Legal Rule Evaluation (CCP § 473.5)
+------------------------------------------------------------
+- Outcome:             Relief Possible
+- Reason:              Motion filed within 180 days — timely under CCP § 473.5.
+- Rules Applied:       not participated_before_default(P), not actual_notice(P)
+
+------------------------------------------------------------
+🧠 GPT Explanation
+------------------------------------------------------------
+
+    Based on the evaluation of your case under California Code of Civil Procedure § 473.5:
+
+    Status: Relief Possible
+    
+    Reason: Motion filed within 180 days — timely under CCP § 473.5.
+    
+    The following rules were applied:
+    not participated_before_default(P), not actual_notice(P)
+    
+    This evaluation considers:
+    - The 180-day filing requirement
+    - Whether you participated in the lawsuit
+    - Whether you had actual notice of the lawsuit
+    - Whether you relied on bad legal advice
+    
+    If you have any questions about this evaluation, feel free to ask!
+    
+
+------------------------------------------------------------
+📢 Disclaimer
+------------------------------------------------------------
+This tool is for research and educational use only.
+It does not constitute legal advice or attorney-client relationship.
+
+============================================================

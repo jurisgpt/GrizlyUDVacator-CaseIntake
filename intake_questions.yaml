@@ -1,0 +1,26 @@
+questions:
+  - id: served_date
+    text: "📅 When did you receive the court papers?"
+    type: date
+    predicate: served_on
+
+  - id: motion_date
+    text: "📅 When did you file your motion to vacate?"
+    type: date
+    predicate: motion_filed_on
+
+  - id: participated
+    text: "❓ Did you participate in the lawsuit before default?"
+    type: bool
+    predicate: participated_before_default
+
+  - id: actual_notice
+    text: "❓ Did you know there was a lawsuit before the judgment?"
+    type: bool
+    predicate: actual_notice
+
+  - id: relied_on_bad_advice
+    text: "❓ Did a legal professional tell you nothing could be done?"
+    type: bool
+    predicate: relied_on_bad_advice
+
