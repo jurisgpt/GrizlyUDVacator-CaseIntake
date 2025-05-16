@@ -12,8 +12,9 @@ The user can also download it via Streamlit's download button.
 """
 
 import datetime
+from typing import Dict, Any, Optional
 
-def generate_summary(facts: dict, result: dict, explanation: str, case_name: str = "Tenant vs. Landlord") -> str:
+def generate_summary(facts: Dict[str, Any], result: Dict[str, Any], explanation: Optional[str], case_name: str = "Tenant vs. Landlord") -> str:
     """
     Create a formatted case summary string.
 
@@ -30,6 +31,13 @@ def generate_summary(facts: dict, result: dict, explanation: str, case_name: str
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
 
+    # Initialize values with defaults
+    served_date = facts.get("served_date", "")
+    motion_date = facts.get("motion_date", "")
+    status = result.get("status", "")
+    reason = result.get("reason", "")
+    rules_applied = result.get("rules_applied", [])
+    
     summary = f"""\
 ============================================================
 🏠 GrizlyUDVacator: Case Summary
@@ -41,8 +49,8 @@ def generate_summary(facts: dict, result: dict, explanation: str, case_name: str
 ------------------------------------------------------------
 🔍 User-Provided Facts
 ------------------------------------------------------------
-- Date Served:         {facts.get("served_date")}
-- Motion Filed:        {facts.get("motion_date")}
+- Date Served:         {served_date}
+- Motion Filed:        {motion_date}
 - Participated:        {"Yes" if facts.get("participated") else "No"}
 - Actual Notice:       {"Yes" if facts.get("actual_notice") else "No"}
 - Bad Legal Advice:    {"Yes" if facts.get("relied_on_bad_advice") else "No"}
@@ -50,14 +58,14 @@ def generate_summary(facts: dict, result: dict, explanation: str, case_name: str
 ------------------------------------------------------------
 ⚖️ Legal Rule Evaluation (CCP § 473.5)
 ------------------------------------------------------------
-- Outcome:             {result.get("status").replace("_", " ").title()}
-- Reason:              {result.get("reason")}
-- Rules Applied:       {', '.join(result.get("rules_applied"))}
+- Outcome:             {status.replace("_", " ").title() or "N/A"}
+- Reason:              {reason or "N/A"}
+- Rules Applied:       {', '.join(rules_applied) or "N/A"}
 
 ------------------------------------------------------------
 🧠 GPT Explanation
 ------------------------------------------------------------
-{explanation}
+{explanation or "No explanation available"}
 
 ------------------------------------------------------------
 📢 Disclaimer

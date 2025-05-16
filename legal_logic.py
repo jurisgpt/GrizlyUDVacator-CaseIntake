@@ -1,8 +1,23 @@
 from datetime import datetime
+from typing import Dict, Any, List
 
-def evaluate_rules(facts):
+def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
     """
     Evaluate post-default UD relief eligibility under CCP § 473.5.
+    
+    Args:
+        facts: Dictionary containing case facts with keys:
+            - served_date: str - Date when summons was served
+            - motion_date: str - Date when motion was filed
+            - participated: bool - Whether tenant participated before default
+            - actual_notice: bool - Whether tenant had actual notice
+            - relied_on_bad_advice: bool - Whether tenant relied on bad legal advice
+            
+    Returns:
+        Dict containing:
+            - status: str - Eligibility status
+            - reason: str - Explanation of status
+            - rules_applied: List[str] - List of rules applied in evaluation
     """
     result = {
         'status': 'ineligible',
@@ -11,8 +26,18 @@ def evaluate_rules(facts):
     }
     
     try:
-        served = datetime.strptime(facts.get("served_date"), "%Y-%m-%d")
-        motion = datetime.strptime(facts.get("motion_date"), "%Y-%m-%d")
+        served_date = facts.get("served_date")
+        motion_date = facts.get("motion_date")
+        
+        if not served_date or not motion_date:
+            return {
+                "status": "incomplete",
+                "reason": "Missing date(s).",
+                "rules_applied": []
+            }
+            
+        served = datetime.strptime(served_date, "%Y-%m-%d")
+        motion = datetime.strptime(motion_date, "%Y-%m-%d")
     except (ValueError, TypeError):
         return {
             "status": "incomplete",
@@ -38,30 +63,27 @@ def evaluate_rules(facts):
             "reason": "Late motion and tenant participated before default — barred under CCP § 473.5(c).",
             "rules_applied": rules_applied
         }
-
-    if late and not participated and not actual_notice:
+    elif late and not participated and not actual_notice:
         return {
             "status": "relief_possible",
             "reason": "Late motion overridden by due process violation — no notice and no participation.",
             "rules_applied": rules_applied
         }
-
-    if late and not participated and relied_on_bad_advice:
+    elif late and not participated and relied_on_bad_advice:
         return {
             "status": "relief_possible",
             "reason": "Late motion may be excused due to reliance on bad legal advice — constructive diligence.",
             "rules_applied": rules_applied
         }
-
-    if not late:
+    elif not late:
         return {
             "status": "relief_possible",
             "reason": "Motion filed within 180 days — timely under CCP § 473.5.",
             "rules_applied": rules_applied
         }
-
-    return {
-        "status": "needs_review",
-        "reason": "Unclear eligibility — recommend attorney review.",
-        "rules_applied": rules_applied
-    }
+    else:
+        return {
+            "status": "needs_review",
+            "reason": "Unclear eligibility — recommend attorney review.",
+            "rules_applied": rules_applied
+        }

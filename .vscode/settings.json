@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./.venv/lib/python3.11/site-packages"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    }
+}

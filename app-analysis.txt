@@ -1,0 +1,186 @@
+STREAMLIT STATIC ANALYSIS REPORT
+========================================
+Generated: 2025-05-15 15:51:20
+
+TOOLS SUMMARY
+----------------------------------------
+pylint (🔥 Essential): 6 issues found in 7.12s
+mypy (✅ Very helpful): 0 issues found in 8.72s
+bandit (✅ Important): Not run
+vulture (⚠️ Nice to have): Not run
+flake8 (✅ Helps with readability): 0 issues found in 0.37s
+
+DETAILED RESULTS
+========================================
+
+FLAKE8 OUTPUT
+----------------------------------------
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:13:80: E501 line too long (269 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:18:80: E501 line too long (84 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:21:80: E501 line too long (146 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:23:80: E501 line too long (95 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:28:1: E302 expected 2 blank lines, found 1
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:33:1: E305 expected 2 blank lines after class or function definition, found 1
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:39:1: W293 blank line contains whitespace
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:75:80: E501 line too long (87 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:84:80: E501 line too long (80 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:122:1: E303 too many blank lines (3)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:128:1: W293 blank line contains whitespace
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:131:1: W293 blank line contains whitespace
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:132:80: E501 line too long (87 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:142:80: E501 line too long (87 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:161:80: E501 line too long (83 > 79 characters)
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:161:84: W291 trailing whitespace
+/Users/pradeepkumar/github/GrizlyUDVacator-CaseIntake/streamlit_app.py:165:80: E501 line too long (84 > 79 characters)
+
+
+
+MYPY OUTPUT
+----------------------------------------
+summary_generator.py:53: error: Item "None" of "Optional[Any]" has no attribute "replace"  [union-attr]
+summary_generator.py:55: error: Argument 1 to "join" of "str" has incompatible type "Optional[Any]"; expected "Iterable[str]"  [arg-type]
+streamlit_app.py:1: error: Cannot find implementation or library stub for module named "streamlit"  [import-not-found]
+streamlit_app.py:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+streamlit_app.py:3: error: Library stubs not installed for "yaml"  [import-untyped]
+streamlit_app.py:3: note: Hint: "python3 -m pip install types-PyYAML"
+streamlit_app.py:3: note: (or run "mypy --install-types" to install all missing stub packages)
+Found 4 errors in 2 files (checked 1 source file)
+
+
+
+PYLINT OUTPUT
+----------------------------------------
+************* Module streamlit_app
+streamlit_app.py:39:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit_app.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit_app.py:131:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit_app.py:161:83: C0303: Trailing whitespace (trailing-whitespace)
+streamlit_app.py:30:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+streamlit_app.py:127:8: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
+
+
+Report
+======
+67 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    legal_logic (streamlit_app)
+    motion_drafter (streamlit_app)
+    openai (streamlit_app)
+    response_logic (streamlit_app)
+    summary_generator (streamlit_app)
+    yaml (streamlit_app)
+
+
+
+170 lines have been analyzed
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |116    |68.24 |116      |=          |
++----------+-------+------+---------+-----------+
+|docstring |7      |4.12  |7        |=          |
++----------+-------+------+---------+-----------+
+|comment   |18     |10.59 |18       |=          |
++----------+-------+------+---------+-----------+
+|empty     |29     |17.06 |29       |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |0          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |4      |4        |4          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |1          |
++-----------+-------+---------+-----------+
+|warning    |1      |1        |1          |
++-----------+-------+---------+-----------+
+|error      |0      |0        |0          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++--------------+------+--------+---------+-----------+
+|module        |error |warning |refactor |convention |
++==============+======+========+=========+===========+
+|streamlit_app |0.00  |100.00  |100.00   |100.00     |
++--------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++------------------------+------------+
+|message id              |occurrences |
++========================+============+
+|trailing-whitespace     |4           |
++------------------------+------------+
+|unspecified-encoding    |1           |
++------------------------+------------+
+|consider-using-sys-exit |1           |
++------------------------+------------+
+
+
+
+
+------------------------------------------------------------------
+Your code has been rated at 9.10/10 (previous run: 9.10/10, +0.00)
+
+
+
+
+STREAMLIT RECOMMENDATIONS
+========================================
+Based on the analysis, consider these Streamlit-specific best practices:
+
+1. Widget Duplication: Always use unique 'key' parameters for interactive elements
+2. State Management: Properly initialize session_state variables before use
+3. Form Handling: Keep form widgets and submission handling together
+4. Execution Flow: Remember Streamlit reruns the entire script on each interaction
+5. Type Safety: Add type hints to improve readability and catch errors early

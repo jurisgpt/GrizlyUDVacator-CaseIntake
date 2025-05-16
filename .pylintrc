@@ -1,0 +1,33 @@
+[MESSAGES CONTROL]
+# Disable common false positives in Streamlit projects
+disable=
+    missing-docstring,  # Streamlit UI components often don't need docstrings
+    invalid-name,       # Streamlit UI elements often use more descriptive names
+    too-few-public-methods,  # Many Streamlit components are simple functions
+    too-many-arguments,  # Streamlit components often need many arguments
+    too-many-branches   # Streamlit UI logic can be complex with many branches
+
+[FORMAT]
+# Set reasonable line length for Streamlit UI code
+max-line-length=100
+
+[BASIC]
+# Allow more descriptive variable names for Streamlit UI elements
+variable-rgx=[a-z_][a-z0-9_]{2,30}$
+function-rgx=[a-z_][a-z0-9_]{2,30}$
+
+[DESIGN]
+# Allow more complex functions for Streamlit UI logic
+max-branches=200
+max-statements=200
+
+[TYPECHECK]
+# Allow more permissive type checking for Streamlit UI elements
+ignored-modules=streamlit
+
+[REPORTS]
+# Enable useful reports
+reports=yes
+output-format=text
+
+[MASTER]

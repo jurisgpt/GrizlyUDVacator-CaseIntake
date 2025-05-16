@@ -10,7 +10,7 @@ def explain_output(result: Dict) -> str:
     Returns:
         str: Natural language explanation
     """
-    explanation = f"""
+    return f"""
     Based on the evaluation of your case under California Code of Civil Procedure § 473.5:
 
     Status: {result['status'].replace('_', ' ').title()}
@@ -28,4 +28,3 @@ def explain_output(result: Dict) -> str:
     
     If you have any questions about this evaluation, feel free to ask!
     """
-    return explanation
