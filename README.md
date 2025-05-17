@@ -41,6 +41,11 @@ GrizlyUDVacator-CaseIntake/
     └── secrets.toml         # OpenAI API key
 ```
 
+## 📌 Version Tags
+
+- `v1.0.0-logic-locked`: First logic-stable milestone release
+- `awareness-freeze-20250516`: Snapshot of complexity, coverage, and structure
+
 ## 🛠️ Technical Details
 
 ### Core Components

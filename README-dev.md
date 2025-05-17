@@ -40,6 +40,13 @@ Each file contains one clear purpose: a header, component, or tab renderer.
 
 ---
 
+## 📌 Version Tags
+
+- `v1.0.0-logic-locked`: First logic-stable milestone release
+- `awareness-freeze-20250516`: Snapshot of complexity, coverage, and structure
+
+---
+
 ## ✅ Usage Pattern
 
 ### In `app.py`:
@@ -92,6 +99,16 @@ streamlit run grizly_app/app.py
 
 ---
 
+## 📊 Project Awareness Map
+
+Run the following to generate structure, complexity, and test coverage reports:
+
+```bash
+bash scripts/devtools/generate_project_map.sh
+```
+
+---
+
 ## ❓ Troubleshooting
 
 | Symptom | Cause | Fix |
@@ -106,4 +123,7 @@ streamlit run grizly_app/app.py
 
 All headers, footers, and labeled sections must be declared via `render_*()` functions. Never hardcode layout or content into the tabs.
 
-This architecture ensures scalability, clarity, and automation-readiness for both humans and machines (like Tony).
+This architecture ensures scalability, clarity, and automation-readiness for both humans and machines 
+
+View results in logs/awareness/<timestamp>/
+
