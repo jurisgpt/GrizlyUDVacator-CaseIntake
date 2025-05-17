@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="SymbolicAI_Legal_Engine_Eviction-1.png" alt="GrizlyUDVacator Banner" width="800"/>
+</p>
+
 # 🏠 GrizlyUDVacator – Symbolic AI based Tenant Case Triage and Attorney Decision Support System
 
 A symbolic AI-powered case triage assistant designed to help community based legal aid professionals analyze default judgments in unlawful detainer (eviction) cases under California Code of Civil Procedure § 473.5.
