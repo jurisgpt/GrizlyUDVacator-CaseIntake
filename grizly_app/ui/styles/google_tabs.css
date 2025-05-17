@@ -1,0 +1,32 @@
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    padding: 0.6rem 0.2rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: white;
+    color: #5f6368;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background-color: #f1f3f4;
+    color: #202124;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: white;
+    color: #1a73e8;
+    font-weight: 600;
+    border-bottom: 3px solid #1a73e8;
+}
+
+.stTabs [aria-selected="true"]:hover {
+    background-color: #e8f0fe;
+}

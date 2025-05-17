@@ -1,7 +1,7 @@
 import unittest
-from datetime import datetime
-from legal_logic import evaluate_rules
-from response_logic import explain_output
+from datetime import date
+from grizly_app.legal_logic_aligned import evaluate_rules
+from grizly_app.response_logic import explain_output
 import yaml
 
 class TestUDVacatorIntegration(unittest.TestCase):
@@ -12,8 +12,8 @@ class TestUDVacatorIntegration(unittest.TestCase):
         
         # Create test facts
         self.test_facts = {
-            "served_date": "2025-01-01",
-            "motion_date": "2025-06-01",  # Within 180 days
+            "served_date": date(2023, 1, 1),
+            "motion_date": date(2023, 6, 1),  # Within 180 days
             "participated": False,
             "actual_notice": False,
             "relied_on_bad_advice": True
@@ -47,6 +47,27 @@ class TestUDVacatorIntegration(unittest.TestCase):
             self.assertIn("text", q)
             self.assertIn("type", q)
             self.assertIn("predicate", q)
+
+    def test_180_day_boundary(self):
+        """
+        Test filing exactly on 180th day boundary
+        """
+        # Set motion date exactly 180 days after service date
+        self.test_facts["motion_date"] = date(2023, 6, 29)  # 180 days after 2023-01-01
+        result = evaluate_rules(self.test_facts)
+        self.assertEqual(result["status"], "relief_possible")
+        self.assertIn("Motion filed within 180 days", result["reason"])
+        self.assertIn("timely_filing(P)", result["rules_applied"])
+
+    def test_181_day_filing(self):
+        """
+        Test filing one day after the 180-day period
+        """
+        # Set motion date to 181 days after service date
+        self.test_facts["motion_date"] = date(2023, 6, 30)  # 181 days after 2023-01-01
+        result = evaluate_rules(self.test_facts)
+        self.assertEqual(result["status"], "relief_barred")
+        self.assertIn("Motion filed after 180 days", result["reason"])
 
 if __name__ == '__main__':
     unittest.main()

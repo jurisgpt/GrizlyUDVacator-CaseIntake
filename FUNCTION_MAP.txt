@@ -1,0 +1,119 @@
+./streamlit-analyzer-fixed.py:def parse_pylint(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-fixed.py:def parse_mypy(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-fixed.py:def parse_bandit(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-fixed.py:def parse_flake8(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-fixed.py:def parse_vulture(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-fixed.py:def run_tool(tool_name: str, target_path: str) -> Tuple[str, List[Dict[str, Any]], bool, Optional[str], float]:
+./streamlit-analyzer-fixed.py:def is_streamlit_related(issue: Dict[str, Any]) -> bool:
+./streamlit-analyzer-fixed.py:def generate_text_report(results: Dict[str, List[Dict[str, Any]]], raw_outputs: Dict[str, str], 
+./streamlit-analyzer-fixed.py:def save_report(report: str, output_path: str) -> None:
+./streamlit-analyzer-fixed.py:def main():
+./legal_logic/legal_logic.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./archive/deprecated_legal_logic/legal_logic_aligned.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./archive/deprecated_legal_logic/legal_logic_final.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./archive/deprecated_legal_logic/legal_logic_enhanced.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./code-quality-checker-streamlit.py:def parse_pylint(output: str) -> List[Dict[str, Any]]:
+./code-quality-checker-streamlit.py:def parse_mypy(output: str) -> List[Dict[str, Any]]:
+./code-quality-checker-streamlit.py:def parse_bandit(output: str) -> List[Dict[str, Any]]:
+./code-quality-checker-streamlit.py:def parse_flake8(output: str) -> List[Dict[str, Any]]:
+./code-quality-checker-streamlit.py:def parse_vulture(output: str) -> List[Dict[str, Any]]:
+./code-quality-checker-streamlit.py:def run_tool(tool_name: str, target_path: str) -> Tuple[List[Dict[str, Any]], bool]:
+./code-quality-checker-streamlit.py:def is_streamlit_related(issue: Dict[str, Any]) -> bool:
+./code-quality-checker-streamlit.py:def generate_summary(results: Dict[str, List[Dict[str, Any]]]) -> str:
+./code-quality-checker-streamlit.py:def save_report(report: str, output_path: str) -> None:
+./code-quality-checker-streamlit.py:def main():
+./streamlit-analyzer-m1.py:def parse_pylint(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-m1.py:def parse_mypy(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-m1.py:def parse_bandit(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-m1.py:def parse_flake8(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-m1.py:def parse_vulture(output: str) -> List[Dict[str, Any]]:
+./streamlit-analyzer-m1.py:def is_streamlit_related(issue: Dict[str, Any]) -> bool:
+./streamlit-analyzer-m1.py:def generate_text_report(results: Dict[str, List[Dict[str, Any]]], raw_outputs: Dict[str, str], 
+./streamlit-analyzer-m1.py:def save_report(report: str, output_path: str) -> None:
+./streamlit-analyzer-m1.py:def main():
+./streamlit_app_backup-3.py:def get_openai_client(api_key: str) -> OpenAI:
+./streamlit_app_backup-3.py:def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./streamlit_app_backup-3.py:def cached_explain_output(result: Dict[str, Any]) -> str:
+./streamlit_app_backup-3.py:def load_questions() -> List[Dict[str, Any]]:
+./streamlit_app_backup-3.py:def generate_motion(facts, result, explanation):
+./streamlit_app_backup-3.py:def main():
+./tests/enhanced-legal-logic-tests.py:def to_date(dstr):
+./tests/enhanced-legal-logic-tests.py:def test_legal_relief(test_case):
+./tests/enhanced-legal-logic-tests.py:def test_input_validation():
+./tests/enhanced-legal-logic-tests.py:def generate_test_report(request):
+./tests/enhanced-legal-logic-tests.py:def test_day_by_day_boundaries():
+./tests/run_performance_tests.py:def run_tests(num_runs: int = 5) -> dict:
+./tests/run_performance_tests.py:def main():
+./tests/test_performance.py:def setup_module():
+./tests/test_legal_logic.py:def to_date(dstr):
+./tests/test_legal_logic.py:def test_legal_relief(served_date, motion_date, participated, knew, bad_advice, expected_relief, expected_rules):
+./tests/test_legal_logic_final.py:def to_date(dstr):
+./tests/test_legal_logic_final.py:def test_legal_logic(test_case):
+./streamlit-doc-generator.py:def main():
+./streamlit_app.py:def get_openai_client(api_key: str) -> OpenAI | None:
+./streamlit_app.py:def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./streamlit_app.py:def cached_explain_output(result: Dict[str, Any]) -> str:
+./streamlit_app.py:def load_questions() -> List[Dict[str, Any]]:
+./streamlit_app.py:def generate_motion(facts, result, explanation):
+./streamlit_app.py:def main():
+./streamlit_app_backup-2.py:def get_openai_client(api_key: str) -> OpenAI:
+./streamlit_app_backup-2.py:def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./streamlit_app_backup-2.py:def cached_explain_output(result: Dict[str, Any]) -> str:
+./streamlit_app_backup-2.py:def load_questions() -> List[Dict[str, Any]]:
+./streamlit_app_backup-2.py:def generate_motion(facts, result, explanation):
+./streamlit_app_backup-2.py:def main():
+./utils/logging.py:def log_event(event_type: str, data: Dict):
+./utils/logging.py:def show_debug_panel():
+./utils/config.py:def load_questions() -> List[Dict]:
+./utils/config.py:def load_config() -> Dict:
+./utils/session.py:def init_session_state():
+./utils/session.py:def validate_session_state():
+./utils/forms.py:def render_intake_form(questions: List[Dict]) -> Dict:
+./streamlit_app_2025-05-15.py:def get_openai_client(api_key: str) -> OpenAI:
+./streamlit_app_2025-05-15.py:def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./streamlit_app_2025-05-15.py:def cached_explain_output(result: Dict[str, Any]) -> str:
+./streamlit_app_2025-05-15.py:def load_questions() -> List[Dict[str, Any]]:
+./streamlit_app_2025-05-15.py:def generate_motion(facts, result, explanation):
+./streamlit_app_2025-05-15.py:def main():
+./streamlit_app_backup-1.py:def get_openai_client(api_key: str) -> OpenAI:
+./streamlit_app_backup-1.py:def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./streamlit_app_backup-1.py:def cached_explain_output(result: Dict[str, Any]) -> str:
+./streamlit_app_backup-1.py:def load_questions() -> List[Dict[str, Any]]:
+./streamlit_app_backup-1.py:def generate_motion(facts, result, explanation):
+./streamlit_app_backup-1.py:def main():
+./legal_logic.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./grizly_app/ui/progress_flow.py:def render_progress_flow():
+./grizly_app/ui/motion_components.py:def render_motion_status(status, reason):
+./grizly_app/ui/motion_components.py:def render_motion_display(motion_text, facts):
+./grizly_app/ui/motion_components.py:def render_motion_download(motion_text):
+./grizly_app/ui/motion_components.py:def render_legal_reasoning(facts, status, reason):
+./grizly_app/ui/motion_components.py:def render_supporting_authority():
+./grizly_app/ui/motion_components.py:def render_decision_path():
+./grizly_app/ui/external_form_tab.py:def render_external_form_tab():
+./grizly_app/ui/header.py:def render_app_header():
+./grizly_app/ui/decision_tree_header.py:def render_decision_tree_header():
+./grizly_app/ui/decision_tree_tab.py:def export_decision_data(result, facts):
+./grizly_app/ui/decision_tree_tab.py:def render_decision_tree_tab():
+./grizly_app/ui/motion_header.py:def render_motion_header():
+./grizly_app/ui/claude_style.py:def apply_claude_style():
+./grizly_app/ui/intake_form_tab.py:def render_intake_tab():
+./grizly_app/ui/case_insights_header.py:def render_case_insights_header():
+./grizly_app/ui/attachments_tab.py:def render_attachments_tab():
+./grizly_app/ui/css_utils.py:def reduce_top_padding():
+./grizly_app/ui/css_utils.py:def apply_custom_styles():
+./grizly_app/ui/motion_summary_tab.py:def render_motion_tab():
+./grizly_app/ui/legal_reasoning_header.py:def render_legal_reasoning_header():
+./grizly_app/ui/footer.py:def render_footer():
+./grizly_app/ui/legal_reasoning_tab.py:def render_reasoning_tab():
+./grizly_app/ui/legal_reasoning_tab.py:def generate_motion_text(facts, result):
+./grizly_app/ui/legal_reasoning_tab.py:def interpret_reasoning(result):
+./grizly_app/ui/intake_header.py:def render_intake_header():
+./grizly_app/ui/global_styles.py:def apply_global_styles():
+./grizly_app/ui/intake_form.py:def render_intake_form():
+./grizly_app/motion_drafter.py:def render_motion_template(facts: Dict[str, Any], result: Dict[str, Any], explanation: str) -> str:
+./grizly_app/legal_logic_aligned.py:def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+./grizly_app/response_logic.py:def explain_output(result: Dict) -> str:
+./grizly_app/summary_generator.py:def generate_summary(facts: Dict[str, Any], result: Dict[str, Any], explanation: Optional[str], case_name: str = "Tenant vs. Landlord") -> str:
+./grizly_app/summary_generator.py:def save_summary(summary: str, filename: str = "case-summary.txt") -> None:
+./grizly_app/logic/decision_tree_logic.py:def create_decision_tree(result, facts):
+./grizly_app/logic/decision_tree_logic.py:def highlight_decision_path(tree, result, facts):

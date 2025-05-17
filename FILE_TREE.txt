@@ -1,0 +1,87 @@
+.
+├── all_py_files.txt
+├── app-analysis.txt
+├── archive
+│   └── deprecated_legal_logic
+│       ├── legal_logic_aligned.py
+│       ├── legal_logic_enhanced.py
+│       └── legal_logic_final.py
+├── case-intake.pdf
+├── case-summary.txt
+├── code-quality-checker-streamlit.py
+├── Code-Quality-Report.txt
+├── embed_google_form_tab.py
+├── FILE_TREE.txt
+├── grizly_app
+│   ├── __init__.py
+│   ├── app.py
+│   ├── colorful_tabs_css.py
+│   ├── installed.txt
+│   ├── legal_logic_aligned.py
+│   ├── logic
+│   │   └── decision_tree_logic.py
+│   ├── motion_drafter.py
+│   ├── response_logic.py
+│   ├── summary_generator.py
+│   └── ui
+│       ├── __init__.py
+│       ├── attachments_tab.py
+│       ├── case_insights_header.py
+│       ├── claude_style.py
+│       ├── css_utils.py
+│       ├── decision_tree_header.py
+│       ├── decision_tree_tab.py
+│       ├── external_form_tab.py
+│       ├── footer.py
+│       ├── global_styles.py
+│       ├── google_tabs_css.py
+│       ├── header.py
+│       ├── intake_form_tab.py
+│       ├── intake_form.py
+│       ├── intake_header.py
+│       ├── legal_reasoning_header.py
+│       ├── legal_reasoning_tab.py
+│       ├── motion_components.py
+│       ├── motion_header.py
+│       ├── motion_summary_tab.py
+│       └── progress_flow.py
+├── GrizlyUDVacator-CaseIntake
+│   └── utils
+├── intake_questions.yaml
+├── legal_logic
+│   └── legal_logic.py
+├── legal_logic.py
+├── LICENSE
+├── README-dev.md
+├── README.md
+├── requirements.txt
+├── run_streamlit.sh
+├── secrets_template.toml
+├── streamlit_analysis_report.md
+├── streamlit_app_2025-05-15.py
+├── streamlit_app_backup-1.py
+├── streamlit_app_backup-2.py
+├── streamlit_app_backup-3.py
+├── streamlit_app.py
+├── streamlit-analyzer-fixed.py
+├── streamlit-analyzer-m1.py
+├── streamlit-doc-generator.py
+├── StreamLitProjectDocv1.txt
+├── test_app.py
+├── test_integration.py
+├── test_legal_logic_enhanced.py
+├── test_results
+├── tests
+│   ├── enhanced-legal-logic-tests.py
+│   ├── run_performance_tests.py
+│   ├── test_legal_logic_final.py
+│   ├── test_legal_logic.py
+│   └── test_performance.py
+├── tony-Broke-Code.md
+└── utils
+    ├── config.py
+    ├── forms.py
+    ├── logging.py
+    └── session.py
+
+12 directories, 73 files

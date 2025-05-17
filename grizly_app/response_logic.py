@@ -1,5 +1,6 @@
 from typing import Dict
 
+
 def explain_output(result: Dict) -> str:
     """
     Generate a GPT-friendly explanation of the evaluation result.

@@ -1,5 +1,5 @@
 # Streamlit Static Analysis Report
-Generated: 2025-05-15 15:33:50
+Generated: 2025-05-15 23:25:01
 
 ## Tools Summary
 - **pylint** (🔥 Essential): ✓ Ran successfully
@@ -430,6 +430,41 @@ Generated: 2025-05-15 15:33:50
 - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:90): unused variable 'key_assert_fingerprint' (60% confidence)
 - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:91): unused variable 'key_server_hostname' (60% confidence)
 - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:92): unused variable 'key_blocksize' (60% confidence)
+- **vulture** (.vulture_whitelist.py:5): unused variable 'cumulativeUniform' (60% confidence)
+- **vulture** (.vulture_whitelist.py:5): unused variable 'densityUniform' (60% confidence)
+- **vulture** (.vulture_whitelist.py:5): unused variable 'sampleUniform' (60% confidence)
+- **vulture** (.vulture_whitelist.py:14): unused variable 'key_host' (60% confidence)
+- **vulture** (.vulture_whitelist.py:14): unused variable 'key_port' (60% confidence)
+- **vulture** (.vulture_whitelist.py:14): unused variable 'key_scheme' (60% confidence)
+- **vulture** (.vulture_whitelist.py:14): unused variable 'key_timeout' (60% confidence)
+- **vulture** (.vulture_whitelist.py:15): unused variable 'key_block' (60% confidence)
+- **vulture** (.vulture_whitelist.py:15): unused variable 'key_retries' (60% confidence)
+- **vulture** (.vulture_whitelist.py:15): unused variable 'key_source_address' (60% confidence)
+- **vulture** (.vulture_whitelist.py:16): unused variable 'key_cert_file' (60% confidence)
+- **vulture** (.vulture_whitelist.py:16): unused variable 'key_key_file' (60% confidence)
+- **vulture** (.vulture_whitelist.py:16): unused variable 'key_key_password' (60% confidence)
+- **vulture** (.vulture_whitelist.py:17): unused variable 'key_ca_cert_data' (60% confidence)
+- **vulture** (.vulture_whitelist.py:17): unused variable 'key_ca_certs' (60% confidence)
+- **vulture** (.vulture_whitelist.py:17): unused variable 'key_cert_reqs' (60% confidence)
+- **vulture** (.vulture_whitelist.py:18): unused variable 'key_ssl_minimum_version' (60% confidence)
+- **vulture** (.vulture_whitelist.py:18): unused variable 'key_ssl_version' (60% confidence)
+- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ca_cert_dir' (60% confidence)
+- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ssl_context' (60% confidence)
+- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ssl_maximum_version' (60% confidence)
+- **vulture** (.vulture_whitelist.py:20): unused variable 'key__proxy' (60% confidence)
+- **vulture** (.vulture_whitelist.py:20): unused variable 'key__proxy_headers' (60% confidence)
+- **vulture** (.vulture_whitelist.py:20): unused variable 'key_headers' (60% confidence)
+- **vulture** (.vulture_whitelist.py:20): unused variable 'key_maxsize' (60% confidence)
+- **vulture** (.vulture_whitelist.py:21): unused variable 'key__proxy_config' (60% confidence)
+- **vulture** (.vulture_whitelist.py:21): unused variable 'key__socks_options' (60% confidence)
+- **vulture** (.vulture_whitelist.py:21): unused variable 'key_socket_options' (60% confidence)
+- **vulture** (.vulture_whitelist.py:22): unused variable 'key_assert_fingerprint' (60% confidence)
+- **vulture** (.vulture_whitelist.py:22): unused variable 'key_assert_hostname' (60% confidence)
+- **vulture** (.vulture_whitelist.py:23): unused variable 'key_blocksize' (60% confidence)
+- **vulture** (.vulture_whitelist.py:23): unused variable 'key_server_hostname' (60% confidence)
+- **vulture** (utils/forms.py:6): unused function 'render_intake_form' (60% confidence)
+- **vulture** (utils/session.py:10): unused function 'init_session_state' (60% confidence)
+- **vulture** (utils/session.py:25): unused function 'validate_session_state' (60% confidence)
 
 ## Detailed Results
 ### pylint (🔥 Essential)
@@ -1393,7 +1428,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 #### compat.py
 - Line 69: unused variable 'is_win' (60% confidence) (UNUSED)
 - Line 81: unused variable 'is_posix' (60% confidence) (UNUSED)
-- Line 94: unused variable 'is_darwin' (60% confidence) (UNUSED)
 - Line 129: unused function 'safe_encode' (60% confidence) (UNUSED)
 - Line 133: unused function 'safe_encode' (60% confidence) (UNUSED)
 - Line 137: unused function 'safe_encode' (60% confidence) (UNUSED)
@@ -1437,7 +1471,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 340: unused method 'list_traverse' (60% confidence) (UNUSED)
 
 #### util.py
-- Line 361: unused attribute '_proc' (60% confidence) (UNUSED)
 - Line 400: unused method 'list_traverse' (60% confidence) (UNUSED)
 - Line 619: unused method 'list_traverse' (60% confidence) (UNUSED)
 
@@ -3238,8 +3271,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 12: unused class 'ModuleTester' (60% confidence) (UNUSED)
 - Line 45: unused attribute 'testnames' (60% confidence) (UNUSED)
 - Line 110: unused method 'test_0' (60% confidence) (UNUSED)
-- Line 121: unused method 'test_1' (60% confidence) (UNUSED)
-- Line 149: unused method 'test_2' (60% confidence) (UNUSED)
 - Line 192: unused method 'test_3' (60% confidence) (UNUSED)
 - Line 212: unused method 'test_4' (60% confidence) (UNUSED)
 - Line 236: unused method 'test_5' (60% confidence) (UNUSED)
@@ -7017,7 +7048,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 40: unused function 'method_caller' (60% confidence) (UNUSED)
 - Line 241: unused function 'result_invoke' (60% confidence) (UNUSED)
 - Line 269: unused function 'call_aside' (60% confidence) (UNUSED)
-- Line 341: unused variable 'attempt' (60% confidence) (UNUSED)
 - Line 376: unused function 'print_yielded' (60% confidence) (UNUSED)
 - Line 410: unused function 'assign_params' (60% confidence) (UNUSED)
 - Line 442: unused function 'save_method_args' (60% confidence) (UNUSED)
@@ -7173,6 +7203,24 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 286: unused method 'iter_data_paths' (60% confidence) (UNUSED)
 - Line 291: unused method 'iter_cache_paths' (60% confidence) (UNUSED)
 - Line 296: unused method 'iter_runtime_paths' (60% confidence) (UNUSED)
+
+#### _common.py
+- Line 785: unused attribute '_CHUNK_SIZE' (60% confidence) (UNUSED)
+
+#### _psbsd.py
+- Line 882: unused variable 'nt_mmap_grouped' (60% confidence) (UNUSED)
+- Line 885: unused variable 'nt_mmap_ext' (60% confidence) (UNUSED)
+
+#### _pssunos.py
+- Line 672: unused variable 'nt_mmap_grouped' (60% confidence) (UNUSED)
+- Line 673: unused variable 'nt_mmap_ext' (60% confidence) (UNUSED)
+
+#### __init__.py
+- Line 2015: unused function 'cleanup_test_procs' (60% confidence) (UNUSED)
+
+#### test_windows.py
+- Line 59: unused function 'powershell' (60% confidence) (UNUSED)
+- Line 74: unused function 'wmic' (60% confidence) (UNUSED)
 
 #### __init__.py
 - Line 112: unused function 'show_info' (60% confidence) (UNUSED)
@@ -8569,7 +8617,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 40: unused function 'method_caller' (60% confidence) (UNUSED)
 - Line 241: unused function 'result_invoke' (60% confidence) (UNUSED)
 - Line 269: unused function 'call_aside' (60% confidence) (UNUSED)
-- Line 341: unused variable 'attempt' (60% confidence) (UNUSED)
 - Line 376: unused function 'print_yielded' (60% confidence) (UNUSED)
 - Line 410: unused function 'assign_params' (60% confidence) (UNUSED)
 - Line 442: unused function 'save_method_args' (60% confidence) (UNUSED)
@@ -9373,9 +9420,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 
 #### event_based_path_watcher.py
 - Line 71: unused method 'close_all' (60% confidence) (UNUSED)
-- Line 399: unused method 'on_created' (60% confidence) (UNUSED)
-- Line 402: unused method 'on_modified' (60% confidence) (UNUSED)
-- Line 405: unused method 'on_moved' (60% confidence) (UNUSED)
 
 #### polling_path_watcher.py
 - Line 38: unused method 'close_all' (60% confidence) (UNUSED)
@@ -9463,11 +9507,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 #### concurrent.py
 - Line 42: unused class 'ReturnValueIgnoredError' (60% confidence) (UNUSED)
 - Line 69: unused variable 'cancel_futures' (100% confidence) (UNUSED)
-
-#### curl_httpclient.py
-- Line 156: unused variable 'num_handles' (60% confidence) (UNUSED)
-- Line 168: unused variable 'num_handles' (60% confidence) (UNUSED)
-- Line 198: unused variable 'num_handles' (60% confidence) (UNUSED)
 
 #### gen.py
 - Line 118: unused class 'KeyReuseError' (60% confidence) (UNUSED)
@@ -9692,6 +9731,59 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 85: unused variable 'subjectAltName' (60% confidence) (UNUSED)
 - Line 87: unused variable 'serialNumber' (60% confidence) (UNUSED)
 
+#### events.py
+- Line 123: unused variable 'is_synthetic' (60% confidence) (UNUSED)
+- Line 368: unused class 'RegexMatchingEventHandler' (60% confidence) (UNUSED)
+- Line 451: unused class 'LoggingEventHandler' (60% confidence) (UNUSED)
+
+#### api.py
+- Line 253: unused method '_remove_handlers_for_watch' (60% confidence) (UNUSED)
+- Line 256: unused property 'emitters' (60% confidence) (UNUSED)
+- Line 317: unused method 'add_handler_for_watch' (60% confidence) (UNUSED)
+- Line 335: unused method 'remove_handler_for_watch' (60% confidence) (UNUSED)
+
+#### fsevents2.py
+- Line 123: unused variable 'stream_ref' (100% confidence) (UNUSED)
+- Line 124: unused variable 'client_callback_info' (100% confidence) (UNUSED)
+- Line 152: unused attribute 'is_change_owner' (60% confidence) (UNUSED)
+- Line 154: unused attribute 'is_finder_info_mod' (60% confidence) (UNUSED)
+- Line 251: unused class 'FSEventsObserver2' (60% confidence) (UNUSED)
+
+#### inotify_c.py
+- Line 52: unused variable 'IN_UNMOUNT' (60% confidence) (UNUSED)
+- Line 53: unused variable 'IN_Q_OVERFLOW' (60% confidence) (UNUSED)
+- Line 57: unused variable 'IN_ONLYDIR' (60% confidence) (UNUSED)
+- Line 59: unused variable 'IN_EXCL_UNLINK' (60% confidence) (UNUSED)
+- Line 60: unused variable 'IN_MASK_ADD' (60% confidence) (UNUSED)
+- Line 62: unused variable 'IN_ONESHOT' (60% confidence) (UNUSED)
+- Line 65: unused variable 'IN_ALL_EVENTS' (60% confidence) (UNUSED)
+- Line 84: unused variable 'IN_CLOEXEC' (60% confidence) (UNUSED)
+- Line 85: unused variable 'IN_NONBLOCK' (60% confidence) (UNUSED)
+- Line 210: unused method 'clear_move_records' (60% confidence) (UNUSED)
+- Line 526: unused property 'is_access' (60% confidence) (UNUSED)
+- Line 550: unused property 'is_move' (60% confidence) (UNUSED)
+
+#### polling.py
+- Line 126: unused class 'PollingObserverVFS' (60% confidence) (UNUSED)
+
+#### winapi.py
+- Line 54: unused variable 'FILE_ACTION_OVERFLOW' (60% confidence) (UNUSED)
+- Line 57: unused variable 'FILE_ACTION_ADDED' (60% confidence) (UNUSED)
+- Line 61: unused variable 'THREAD_TERMINATE' (60% confidence) (UNUSED)
+- Line 64: unused variable 'WAIT_ABANDONED' (60% confidence) (UNUSED)
+- Line 65: unused variable 'WAIT_IO_COMPLETION' (60% confidence) (UNUSED)
+- Line 67: unused variable 'WAIT_TIMEOUT' (60% confidence) (UNUSED)
+
+#### __init__.py
+- Line 191: unused attribute 'restart_count' (60% confidence) (UNUSED)
+- Line 282: unused attribute 'restart_count' (60% confidence) (UNUSED)
+
+#### watchmedo.py
+- Line 56: unused method '_split_lines' (60% confidence) (UNUSED)
+- Line 217: unused function 'tricks_from' (60% confidence) (UNUSED)
+- Line 328: unused function 'tricks_generate_yaml' (60% confidence) (UNUSED)
+- Line 615: unused function 'auto_restart' (60% confidence) (UNUSED)
+
 #### __init__.py
 - Line 62: unused function 'compose_all' (60% confidence) (UNUSED)
 - Line 97: unused function 'full_load' (60% confidence) (UNUSED)
@@ -9710,12 +9802,139 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
 - Line 235: unused attribute 'sequence_context' (60% confidence) (UNUSED)
 - Line 703: unused variable 'unicode_characters' (60% confidence) (UNUSED)
 
+#### .vulture_whitelist.py
+- Line 5: unused variable 'cumulativeUniform' (60% confidence) (UNUSED)
+- Line 5: unused variable 'densityUniform' (60% confidence) (UNUSED)
+- Line 5: unused variable 'sampleUniform' (60% confidence) (UNUSED)
+- Line 8: unused variable 'SUCCESS_EOF' (60% confidence) (UNUSED)
+- Line 9: unused variable 'onmessage' (60% confidence) (UNUSED)
+- Line 11: unused variable 'responseType' (60% confidence) (UNUSED)
+- Line 14: unused variable 'key_host' (60% confidence) (UNUSED)
+- Line 14: unused variable 'key_port' (60% confidence) (UNUSED)
+- Line 14: unused variable 'key_scheme' (60% confidence) (UNUSED)
+- Line 14: unused variable 'key_timeout' (60% confidence) (UNUSED)
+- Line 15: unused variable 'key_block' (60% confidence) (UNUSED)
+- Line 15: unused variable 'key_retries' (60% confidence) (UNUSED)
+- Line 15: unused variable 'key_source_address' (60% confidence) (UNUSED)
+- Line 16: unused variable 'key_cert_file' (60% confidence) (UNUSED)
+- Line 16: unused variable 'key_key_file' (60% confidence) (UNUSED)
+- Line 16: unused variable 'key_key_password' (60% confidence) (UNUSED)
+- Line 17: unused variable 'key_ca_cert_data' (60% confidence) (UNUSED)
+- Line 17: unused variable 'key_ca_certs' (60% confidence) (UNUSED)
+- Line 17: unused variable 'key_cert_reqs' (60% confidence) (UNUSED)
+- Line 18: unused variable 'key_ssl_minimum_version' (60% confidence) (UNUSED)
+- Line 18: unused variable 'key_ssl_version' (60% confidence) (UNUSED)
+- Line 19: unused variable 'key_ca_cert_dir' (60% confidence) (UNUSED)
+- Line 19: unused variable 'key_ssl_context' (60% confidence) (UNUSED)
+- Line 19: unused variable 'key_ssl_maximum_version' (60% confidence) (UNUSED)
+- Line 20: unused variable 'key__proxy' (60% confidence) (UNUSED)
+- Line 20: unused variable 'key__proxy_headers' (60% confidence) (UNUSED)
+- Line 20: unused variable 'key_headers' (60% confidence) (UNUSED)
+- Line 20: unused variable 'key_maxsize' (60% confidence) (UNUSED)
+- Line 21: unused variable 'key__proxy_config' (60% confidence) (UNUSED)
+- Line 21: unused variable 'key__socks_options' (60% confidence) (UNUSED)
+- Line 21: unused variable 'key_socket_options' (60% confidence) (UNUSED)
+- Line 22: unused variable 'key_assert_fingerprint' (60% confidence) (UNUSED)
+- Line 22: unused variable 'key_assert_hostname' (60% confidence) (UNUSED)
+- Line 23: unused variable 'key_blocksize' (60% confidence) (UNUSED)
+- Line 23: unused variable 'key_server_hostname' (60% confidence) (UNUSED)
+- Line 26: unused variable 'compose_all' (60% confidence) (UNUSED)
+- Line 26: unused variable 'full_load' (60% confidence) (UNUSED)
+- Line 26: unused variable 'full_load_all' (60% confidence) (UNUSED)
+- Line 27: unused variable 'safe_load_all' (60% confidence) (UNUSED)
+- Line 27: unused variable 'unsafe_load' (60% confidence) (UNUSED)
+- Line 27: unused variable 'unsafe_load_all' (60% confidence) (UNUSED)
+- Line 28: unused variable 'safe_dump_all' (60% confidence) (UNUSED)
+- Line 32: unused variable 'motion_generator' (60% confidence) (UNUSED)
+- Line 35: unused variable 'parse_bandit' (60% confidence) (UNUSED)
+- Line 35: unused variable 'parse_mypy' (60% confidence) (UNUSED)
+- Line 35: unused variable 'parse_pylint' (60% confidence) (UNUSED)
+- Line 36: unused variable 'parse_flake8' (60% confidence) (UNUSED)
+- Line 36: unused variable 'parse_vulture' (60% confidence) (UNUSED)
+
 #### code-quality-checker-streamlit.py
 - Line 80: unused function 'parse_pylint' (60% confidence) (UNUSED)
 - Line 98: unused function 'parse_mypy' (60% confidence) (UNUSED)
 - Line 116: unused function 'parse_bandit' (60% confidence) (UNUSED)
 - Line 134: unused function 'parse_flake8' (60% confidence) (UNUSED)
 - Line 152: unused function 'parse_vulture' (60% confidence) (UNUSED)
+
+#### embed_google_form_tab.py
+- Line 7: unused variable 'tab1' (60% confidence) (UNUSED)
+- Line 7: unused variable 'tab2' (60% confidence) (UNUSED)
+- Line 7: unused variable 'tab3' (60% confidence) (UNUSED)
+- Line 7: unused variable 'tab4' (60% confidence) (UNUSED)
+- Line 7: unused variable 'tab5' (60% confidence) (UNUSED)
+
+#### app.py
+- Line 11: unused import 'apply_global_styles' (90% confidence) (UNUSED)
+
+#### claude_style.py
+- Line 3: unused function 'apply_claude_style' (60% confidence) (UNUSED)
+
+#### css_utils.py
+- Line 13: unused function 'apply_custom_styles' (60% confidence) (UNUSED)
+
+#### global_styles.py
+- Line 3: unused function 'apply_global_styles' (60% confidence) (UNUSED)
+
+#### motion_header.py
+- Line 3: unused function 'render_motion_header' (60% confidence) (UNUSED)
+
+#### motion_summary_tab.py
+- Line 3: unused import 'render_motion_header' (90% confidence) (UNUSED)
+
+#### themes.py
+- Line 225: unused function 'render_theme_selector' (60% confidence) (UNUSED)
+- Line 237: unused function 'apply_theme' (60% confidence) (UNUSED)
+
+#### legal_logic_enhanced.py
+- Line 20: unused variable 'REASON_NO_NOTICE' (60% confidence) (UNUSED)
+- Line 29: unused variable 'STATUS_INCOMPLETE' (60% confidence) (UNUSED)
+
+#### legal_logic_enhanced.py
+- Line 20: unused variable 'REASON_NO_NOTICE' (60% confidence) (UNUSED)
+- Line 29: unused variable 'STATUS_INCOMPLETE' (60% confidence) (UNUSED)
+
+#### streamlit-analyzer-fixed.py
+- Line 87: unused function 'parse_pylint' (60% confidence) (UNUSED)
+- Line 105: unused function 'parse_mypy' (60% confidence) (UNUSED)
+- Line 123: unused function 'parse_bandit' (60% confidence) (UNUSED)
+- Line 141: unused function 'parse_flake8' (60% confidence) (UNUSED)
+- Line 159: unused function 'parse_vulture' (60% confidence) (UNUSED)
+
+#### streamlit_app.py
+- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
+- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
+- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
+
+#### streamlit_app_backup-2.py
+- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
+- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
+- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
+
+#### streamlit_app_backup-3.py
+- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
+- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
+- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
+
+#### summary_generator.py
+- Line 82: unused function 'save_summary' (60% confidence) (UNUSED)
+
+#### enhanced-legal-logic-tests.py
+- Line 8: unused import 'pytest_html' (90% confidence) (UNUSED)
+- Line 267: unused function 'generate_test_report' (60% confidence) (UNUSED)
+
+#### forms.py
+- Line 6: unused function 'render_intake_form' (60% confidence) (UNUSED)
+
+#### logging.py
+- Line 7: unused function 'log_event' (60% confidence) (UNUSED)
+- Line 17: unused function 'show_debug_panel' (60% confidence) (UNUSED)
+
+#### session.py
+- Line 10: unused function 'init_session_state' (60% confidence) (UNUSED)
+- Line 25: unused function 'validate_session_state' (60% confidence) (UNUSED)
 
 ### flake8 (✅ Helps with readability)
 Keeps formatting, line breaks, and indentations clean

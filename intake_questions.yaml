@@ -5,7 +5,7 @@ questions:
     predicate: served_on
 
   - id: motion_date
-    text: "📅 When did you file your motion to vacate?"
+    text: "📅 When do you expect to file your motion to vacate default judgement, if found eligible?"
     type: date
     predicate: motion_filed_on
 

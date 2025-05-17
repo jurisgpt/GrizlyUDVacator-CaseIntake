@@ -2,24 +2,24 @@
 🏠 GrizlyUDVacator: Case Summary
 ============================================================
 
-📅 Timestamp: 2025-05-15 17:06:31
+📅 Timestamp: 2025-05-15 17:47:46
 📁 Case: Tenant vs. Landlord
 
 ------------------------------------------------------------
 🔍 User-Provided Facts
 ------------------------------------------------------------
-- Date Served:         2025-05-15
+- Date Served:         2015-05-15
 - Motion Filed:        2025-05-15
-- Participated:        No
-- Actual Notice:       No
-- Bad Legal Advice:    No
+- Participated:        Yes
+- Actual Notice:       Yes
+- Bad Legal Advice:    Yes
 
 ------------------------------------------------------------
 ⚖️ Legal Rule Evaluation (CCP § 473.5)
 ------------------------------------------------------------
-- Outcome:             Relief Possible
-- Reason:              Motion filed within 180 days — timely under CCP § 473.5.
-- Rules Applied:       not participated_before_default(P), not actual_notice(P)
+- Outcome:             Relief Barred
+- Reason:              Late motion and tenant participated before default — barred under CCP § 473.5(c).
+- Rules Applied:       late_motion(P), relied_on_bad_advice(P)
 
 ------------------------------------------------------------
 🧠 GPT Explanation
@@ -27,12 +27,12 @@
 
     Based on the evaluation of your case under California Code of Civil Procedure § 473.5:
 
-    Status: Relief Possible
+    Status: Relief Barred
     
-    Reason: Motion filed within 180 days — timely under CCP § 473.5.
+    Reason: Late motion and tenant participated before default — barred under CCP § 473.5(c).
     
     The following rules were applied:
-    not participated_before_default(P), not actual_notice(P)
+    late_motion(P), relied_on_bad_advice(P)
     
     This evaluation considers:
     - The 180-day filing requirement

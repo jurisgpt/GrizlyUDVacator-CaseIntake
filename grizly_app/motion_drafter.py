@@ -1,5 +1,6 @@
 from datetime import datetime
-from typing import Dict, Any
+from typing import Any, Dict
+
 
 def render_motion_template(facts: Dict[str, Any], result: Dict[str, Any], explanation: str) -> str:
     """
@@ -22,9 +23,9 @@ def render_motion_template(facts: Dict[str, Any], result: Dict[str, Any], explan
     
     # Format dates if they exist
     if served_date != '[DATE SERVED]':
-        served_date = datetime.strptime(served_date, '%Y-%m-%d').strftime('%B %d, %Y')
+        served_date = datetime.datetime.strptime(served_date, '%Y-%m-%d').strftime('%B %d, %Y')
     if motion_date != '[DATE FILED]':
-        motion_date = datetime.strptime(motion_date, '%Y-%m-%d').strftime('%B %d, %Y')
+        motion_date = datetime.datetime.strptime(motion_date, '%Y-%m-%d').strftime('%B %d, %Y')
     
     return f"""
     [This is a rough drat/demo. Attorney can replace this template. ]
@@ -62,7 +63,7 @@ def render_motion_template(facts: Dict[str, Any], result: Dict[str, Any], explan
     3. Allow Defendant to answer the Complaint
     4. Grant such other and further relief as the Court deems just and proper
     
-    DATED: {datetime.now().strftime('%B %d, %Y')}
+    DATED: {datetime.datetime.now().strftime('%B %d, %Y')}
     
     ___________________________
     {defendant_name}

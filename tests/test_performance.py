@@ -2,9 +2,9 @@ import pytest
 import time
 from datetime import datetime
 import streamlit as st
-from streamlit_app import load_questions, cached_evaluate_rules, cached_explain_output, get_openai_client
-from legal_logic import evaluate_rules
-from response_logic import explain_output
+from grizly_app.utils import load_questions, cached_evaluate_rules, cached_explain_output, get_openai_client
+from grizly_app.legal_logic_aligned import evaluate_rules
+from grizly_app.response_logic import explain_output
 
 # Sample test data
 test_facts = {

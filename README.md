@@ -16,7 +16,7 @@ A symbolic AI-powered assistant designed to help tenants and legal professionals
 - Clear status and reasoning
 
 ### 3. AI-Powered Explanation
-- GPT-3.5 generated explanations
+- GPT-3.5 generated narrative
 - Natural language summaries
 - Legal reasoning breakdown
 - Case-specific guidance

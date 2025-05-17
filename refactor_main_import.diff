@@ -1,0 +1,1852 @@
+diff --git a/Code-Quality-Report.txt b/Code-Quality-Report.txt
+index 81bae1c..d616798 100644
+--- a/Code-Quality-Report.txt
++++ b/Code-Quality-Report.txt
+@@ -1,21 +1,21 @@
+ STREAMLIT STATIC ANALYSIS REPORT
+ ========================================
+-Generated: 2025-05-15 16:10:57
++Generated: 2025-05-15 18:16:42
+ 
+ TOOLS SUMMARY
+ ----------------------------------------
+-pylint (🔥 Essential): 1 issues found in 0.67s
+-mypy (✅ Very helpful): 0 issues found in 0.46s
+-bandit (✅ Important): 17 issues found in 1.01s
+-vulture (⚠️ Nice to have): 6379 issues found in 79.07s
+-flake8 (✅ Helps with readability): 0 issues found in 52.33s
++pylint (🔥 Essential): 1 issues found in 0.69s
++mypy (✅ Very helpful): 0 issues found in 0.47s
++bandit (✅ Important): 17 issues found in 1.09s
++vulture (⚠️ Nice to have): 6433 issues found in 72.47s
++flake8 (✅ Helps with readability): 0 issues found in 49.04s
+ 
+ STREAMLIT-SPECIFIC ISSUES
+ ----------------------------------------
+-[bandit] ./code-quality-checker-streamlit.py:182: subprocess call - check for execution of untrusted input.
+-[bandit] ./streamlit-analyzer-fixed.py:192: subprocess call - check for execution of untrusted input.
+-[bandit] ./streamlit-analyzer-fixed.py:202: subprocess call - check for execution of untrusted input.
+-[bandit] ./tests/run_performance_tests.py:16: subprocess call - check for execution of untrusted input.
++[bandit] ./code-quality-checker-streamlit.py:187: subprocess call - check for execution of untrusted input.
++[bandit] ./streamlit-analyzer-fixed.py:198: subprocess call - check for execution of untrusted input.
++[bandit] ./streamlit-analyzer-fixed.py:209: subprocess call - check for execution of untrusted input.
++[bandit] ./tests/run_performance_tests.py:20: subprocess call - check for execution of untrusted input.
+ [vulture] .venv/lib/python3.11/site-packages/altair/expr/__init__.py:750: unused method 'sampleUniform' (60% confidence)
+ [vulture] .venv/lib/python3.11/site-packages/altair/expr/__init__.py:765: unused method 'cumulativeUniform' (60% confidence)
+ [vulture] .venv/lib/python3.11/site-packages/altair/expr/__init__.py:784: unused method 'densityUniform' (60% confidence)
+@@ -437,13 +437,48 @@ STREAMLIT-SPECIFIC ISSUES
+ [vulture] .venv/lib/python3.11/site-packages/urllib3/poolmanager.py:90: unused variable 'key_assert_fingerprint' (60% confidence)
+ [vulture] .venv/lib/python3.11/site-packages/urllib3/poolmanager.py:91: unused variable 'key_server_hostname' (60% confidence)
+ [vulture] .venv/lib/python3.11/site-packages/urllib3/poolmanager.py:92: unused variable 'key_blocksize' (60% confidence)
++[vulture] .vulture_whitelist.py:5: unused variable 'cumulativeUniform' (60% confidence)
++[vulture] .vulture_whitelist.py:5: unused variable 'densityUniform' (60% confidence)
++[vulture] .vulture_whitelist.py:5: unused variable 'sampleUniform' (60% confidence)
++[vulture] .vulture_whitelist.py:14: unused variable 'key_host' (60% confidence)
++[vulture] .vulture_whitelist.py:14: unused variable 'key_port' (60% confidence)
++[vulture] .vulture_whitelist.py:14: unused variable 'key_scheme' (60% confidence)
++[vulture] .vulture_whitelist.py:14: unused variable 'key_timeout' (60% confidence)
++[vulture] .vulture_whitelist.py:15: unused variable 'key_block' (60% confidence)
++[vulture] .vulture_whitelist.py:15: unused variable 'key_retries' (60% confidence)
++[vulture] .vulture_whitelist.py:15: unused variable 'key_source_address' (60% confidence)
++[vulture] .vulture_whitelist.py:16: unused variable 'key_cert_file' (60% confidence)
++[vulture] .vulture_whitelist.py:16: unused variable 'key_key_file' (60% confidence)
++[vulture] .vulture_whitelist.py:16: unused variable 'key_key_password' (60% confidence)
++[vulture] .vulture_whitelist.py:17: unused variable 'key_ca_cert_data' (60% confidence)
++[vulture] .vulture_whitelist.py:17: unused variable 'key_ca_certs' (60% confidence)
++[vulture] .vulture_whitelist.py:17: unused variable 'key_cert_reqs' (60% confidence)
++[vulture] .vulture_whitelist.py:18: unused variable 'key_ssl_minimum_version' (60% confidence)
++[vulture] .vulture_whitelist.py:18: unused variable 'key_ssl_version' (60% confidence)
++[vulture] .vulture_whitelist.py:19: unused variable 'key_ca_cert_dir' (60% confidence)
++[vulture] .vulture_whitelist.py:19: unused variable 'key_ssl_context' (60% confidence)
++[vulture] .vulture_whitelist.py:19: unused variable 'key_ssl_maximum_version' (60% confidence)
++[vulture] .vulture_whitelist.py:20: unused variable 'key__proxy' (60% confidence)
++[vulture] .vulture_whitelist.py:20: unused variable 'key__proxy_headers' (60% confidence)
++[vulture] .vulture_whitelist.py:20: unused variable 'key_headers' (60% confidence)
++[vulture] .vulture_whitelist.py:20: unused variable 'key_maxsize' (60% confidence)
++[vulture] .vulture_whitelist.py:21: unused variable 'key__proxy_config' (60% confidence)
++[vulture] .vulture_whitelist.py:21: unused variable 'key__socks_options' (60% confidence)
++[vulture] .vulture_whitelist.py:21: unused variable 'key_socket_options' (60% confidence)
++[vulture] .vulture_whitelist.py:22: unused variable 'key_assert_fingerprint' (60% confidence)
++[vulture] .vulture_whitelist.py:22: unused variable 'key_assert_hostname' (60% confidence)
++[vulture] .vulture_whitelist.py:23: unused variable 'key_blocksize' (60% confidence)
++[vulture] .vulture_whitelist.py:23: unused variable 'key_server_hostname' (60% confidence)
++[vulture] utils/forms.py:6: unused function 'render_intake_form' (60% confidence)
++[vulture] utils/session.py:10: unused function 'init_session_state' (60% confidence)
++[vulture] utils/session.py:25: unused function 'validate_session_state' (60% confidence)
+ 
+ DETAILED RESULTS
+ ========================================
+ 
+ BANDIT OUTPUT
+ ----------------------------------------
+-Run started:2025-05-15 23:09:39.858495
++Run started:2025-05-16 01:15:31.344985
+ 
+ Test results:
+ >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+@@ -460,15 +495,16 @@ Test results:
+    Severity: Low   Confidence: High
+    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+    More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+-   Location: ./code-quality-checker-streamlit.py:182:18
+-181	        # Use subprocess to run the command
+-182	        process = subprocess.run(
+-183	            cmd, 
+-184	            capture_output=True, 
+-185	            text=True, 
+-186	            check=False
+-187	        )
+-188	        
++   Location: ./code-quality-checker-streamlit.py:187:18
++186	            check=False,
++187	            shell=False
++188	        )
++189	        
++190	        # Check if the tool was installed and ran successfully
++191	        if process.returncode != 0 and "not found" in process.stderr:
++192	            print(f"{COLORS['RED']}Error: {tool_name} is not installed.{COLORS['ENDC']}")
++193	            print(f"Install with: pip install {tool_name}")
++194	            return [], False
+ 
+ --------------------------------------------------
+ >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+@@ -485,32 +521,34 @@ Test results:
+    Severity: Low   Confidence: High
+    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+    More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+-   Location: ./streamlit-analyzer-fixed.py:192:18
+-191	        # Use subprocess with timeout
+-192	        process = subprocess.run(
+-193	            cmd, 
+-194	            capture_output=True, 
+-195	            text=True, 
+-196	            check=False,
+-197	            timeout=timeout
+-198	        )
+-199	        
++   Location: ./streamlit-analyzer-fixed.py:198:18
++197	            timeout=timeout,
++198	            shell=False
++199	        )
++200	        
++201	        # Get raw output
++202	        try:
++203	            raw_process = subprocess.run(
++204	                raw_cmd,
++205	                capture_output=True,
++206	                text=True,
+ 
+ --------------------------------------------------
+ >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+    Severity: Low   Confidence: High
+    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+    More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+-   Location: ./streamlit-analyzer-fixed.py:202:26
+-201	        try:
+-202	            raw_process = subprocess.run(
+-203	                raw_cmd,
+-204	                capture_output=True,
+-205	                text=True,
+-206	                check=False,
+-207	                timeout=timeout
+-208	            )
+-209	            raw_output = raw_process.stdout
++   Location: ./streamlit-analyzer-fixed.py:209:26
++208	                timeout=timeout,
++209	                shell=False
++210	            )
++211	            raw_output = raw_process.stdout
++212	        except Exception as e:
++213	            print(f"{COLORS['YELLOW']}Warning: Failed to get raw output for {tool_name}: {str(e)}{COLORS['ENDC']}")
++214	            raw_output = ""
++215	        
++216	        execution_time = time.time() - start_time
++217	        
+ 
+ --------------------------------------------------
+ >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+@@ -532,23 +570,25 @@ Test results:
+ 16	        result = subprocess.run(
+ 17	            ["python", "-m", "pytest", "test_performance.py", "-v"],
+ 18	            capture_output=True,
+-19	            text=True
+-20	        )
+-21	        
++19	            text=True,
++20	            shell=False
++21	        )
++22	        
+ 
+ --------------------------------------------------
+ >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+    Severity: Low   Confidence: High
+    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+    More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+-   Location: ./tests/run_performance_tests.py:16:17
+-15	        # Run the tests
+-16	        result = subprocess.run(
+-17	            ["python", "-m", "pytest", "test_performance.py", "-v"],
+-18	            capture_output=True,
+-19	            text=True
+-20	        )
+-21	        
++   Location: ./tests/run_performance_tests.py:20:17
++19	            text=True,
++20	            shell=False
++21	        )
++22	        
++23	        # Parse timing information
++24	        timings = {}
++25	        output = result.stdout
++26	        
+ 
+ --------------------------------------------------
+ >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+@@ -643,7 +683,7 @@ Test results:
+ --------------------------------------------------
+ 
+ Code scanned:
+-	Total lines of code: 2168
++	Total lines of code: 2956
+ 	Total lines skipped (#nosec): 0
+ 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+ 
+@@ -658,8 +698,11 @@ Run metrics:
+ 		Low: 0
+ 		Medium: 0
+ 		High: 17
+-Files skipped (1):
++Files skipped (4):
+ 	./streamlit-analyzer-m1.py (syntax error while parsing AST from file)
++	./streamlit_app.py (syntax error while parsing AST from file)
++	./streamlit_app_2025-05-15.py (syntax error while parsing AST from file)
++	./streamlit_app_backup-1.py (syntax error while parsing AST from file)
+ 
+ 
+ 
+@@ -57615,15 +57658,15 @@ FLAKE8 OUTPUT
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:98:1: F401 '.version.__version__' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:111:5: F401 '._distributor_init' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:114:9: F401 'numpy.__config__.show_config' imported but unused
+-./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.sum' imported but unused
+-./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.all' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.any' imported but unused
+-./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.min' imported but unused
++./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.bool' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.round' imported but unused
+-./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.divmod' imported but unused
++./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.all' imported but unused
++./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.min' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.pow' imported but unused
+-./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.bool' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.max' imported but unused
++./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.sum' imported but unused
++./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.divmod' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.False_' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.ScalarType' imported but unused
+ ./.venv/lib/python3.11/site-packages/numpy/__init__.py:122:5: F401 '._core.True_' imported but unused
+@@ -157750,57 +157793,56 @@ FLAKE8 OUTPUT
+ ./code-quality-checker-streamlit.py:183:17: W291 trailing whitespace
+ ./code-quality-checker-streamlit.py:184:33: W291 trailing whitespace
+ ./code-quality-checker-streamlit.py:185:23: W291 trailing whitespace
+-./code-quality-checker-streamlit.py:188:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:191:80: E501 line too long (89 > 79 characters)
+-./code-quality-checker-streamlit.py:194:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:198:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:200:80: E501 line too long (84 > 79 characters)
+-./code-quality-checker-streamlit.py:203:1: E302 expected 2 blank lines, found 1
+-./code-quality-checker-streamlit.py:208:1: E302 expected 2 blank lines, found 1
+-./code-quality-checker-streamlit.py:211:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:216:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:222:80: E501 line too long (88 > 79 characters)
+-./code-quality-checker-streamlit.py:224:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:234:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:240:80: E501 line too long (84 > 79 characters)
+-./code-quality-checker-streamlit.py:242:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:247:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:250:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:254:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:256:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:264:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:273:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:275:80: E501 line too long (85 > 79 characters)
+-./code-quality-checker-streamlit.py:277:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:280:80: E501 line too long (93 > 79 characters)
+-./code-quality-checker-streamlit.py:282:80: E501 line too long (107 > 79 characters)
+-./code-quality-checker-streamlit.py:283:80: E501 line too long (102 > 79 characters)
+-./code-quality-checker-streamlit.py:284:80: E501 line too long (93 > 79 characters)
+-./code-quality-checker-streamlit.py:285:80: E501 line too long (107 > 79 characters)
+-./code-quality-checker-streamlit.py:286:80: E501 line too long (101 > 79 characters)
+-./code-quality-checker-streamlit.py:287:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:290:1: E302 expected 2 blank lines, found 1
+-./code-quality-checker-streamlit.py:296:1: E302 expected 2 blank lines, found 1
+-./code-quality-checker-streamlit.py:302:24: W291 trailing whitespace
+-./code-quality-checker-streamlit.py:308:80: E501 line too long (81 > 79 characters)
+-./code-quality-checker-streamlit.py:315:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:317:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:320:80: E501 line too long (104 > 79 characters)
+-./code-quality-checker-streamlit.py:322:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:324:80: E501 line too long (87 > 79 characters)
+-./code-quality-checker-streamlit.py:325:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:330:80: E501 line too long (90 > 79 characters)
+-./code-quality-checker-streamlit.py:332:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:338:80: E501 line too long (88 > 79 characters)
+-./code-quality-checker-streamlit.py:341:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:345:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:349:46: W291 trailing whitespace
+-./code-quality-checker-streamlit.py:350:28: W291 trailing whitespace
+-./code-quality-checker-streamlit.py:353:1: W293 blank line contains whitespace
+-./code-quality-checker-streamlit.py:359:1: E305 expected 2 blank lines after class or function definition, found 1
+-./code-quality-checker-streamlit.py:361:1: W391 blank line at end of file
++./code-quality-checker-streamlit.py:189:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:192:80: E501 line too long (89 > 79 characters)
++./code-quality-checker-streamlit.py:195:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:199:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:201:80: E501 line too long (84 > 79 characters)
++./code-quality-checker-streamlit.py:204:1: E302 expected 2 blank lines, found 1
++./code-quality-checker-streamlit.py:209:1: E302 expected 2 blank lines, found 1
++./code-quality-checker-streamlit.py:212:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:217:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:223:80: E501 line too long (88 > 79 characters)
++./code-quality-checker-streamlit.py:225:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:235:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:241:80: E501 line too long (84 > 79 characters)
++./code-quality-checker-streamlit.py:243:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:248:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:251:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:255:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:257:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:265:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:274:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:276:80: E501 line too long (85 > 79 characters)
++./code-quality-checker-streamlit.py:278:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:281:80: E501 line too long (93 > 79 characters)
++./code-quality-checker-streamlit.py:283:80: E501 line too long (107 > 79 characters)
++./code-quality-checker-streamlit.py:284:80: E501 line too long (102 > 79 characters)
++./code-quality-checker-streamlit.py:285:80: E501 line too long (93 > 79 characters)
++./code-quality-checker-streamlit.py:286:80: E501 line too long (107 > 79 characters)
++./code-quality-checker-streamlit.py:287:80: E501 line too long (101 > 79 characters)
++./code-quality-checker-streamlit.py:288:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:291:1: E302 expected 2 blank lines, found 1
++./code-quality-checker-streamlit.py:297:1: E302 expected 2 blank lines, found 1
++./code-quality-checker-streamlit.py:303:24: W291 trailing whitespace
++./code-quality-checker-streamlit.py:309:80: E501 line too long (81 > 79 characters)
++./code-quality-checker-streamlit.py:316:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:318:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:321:80: E501 line too long (104 > 79 characters)
++./code-quality-checker-streamlit.py:323:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:325:80: E501 line too long (87 > 79 characters)
++./code-quality-checker-streamlit.py:326:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:331:80: E501 line too long (90 > 79 characters)
++./code-quality-checker-streamlit.py:333:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:339:80: E501 line too long (88 > 79 characters)
++./code-quality-checker-streamlit.py:342:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:346:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:350:46: W291 trailing whitespace
++./code-quality-checker-streamlit.py:351:28: W291 trailing whitespace
++./code-quality-checker-streamlit.py:354:1: W293 blank line contains whitespace
++./code-quality-checker-streamlit.py:360:1: E305 expected 2 blank lines after class or function definition, found 1
++./code-quality-checker-streamlit.py:362:1: W391 blank line at end of file
+ ./legal_logic.py:2:1: F401 'typing.List' imported but unused
+-./legal_logic.py:2:1: F401 'typing.Optional' imported but unused
+ ./legal_logic.py:4:1: E302 expected 2 blank lines, found 1
+ ./legal_logic.py:7:1: W293 blank line contains whitespace
+ ./legal_logic.py:14:80: E501 line too long (84 > 79 characters)
+@@ -157809,44 +157851,39 @@ FLAKE8 OUTPUT
+ ./legal_logic.py:27:1: W293 blank line contains whitespace
+ ./legal_logic.py:31:1: W293 blank line contains whitespace
+ ./legal_logic.py:38:1: W293 blank line contains whitespace
+-./legal_logic.py:54:12: E701 multiple statements on one line (colon)
+-./legal_logic.py:55:24: E701 multiple statements on one line (colon)
+-./legal_logic.py:55:80: E501 line too long (83 > 79 characters)
+-./legal_logic.py:56:25: E701 multiple statements on one line (colon)
+-./legal_logic.py:57:28: E701 multiple statements on one line (colon)
+-./legal_logic.py:63:80: E501 line too long (106 > 79 characters)
+-./legal_logic.py:70:80: E501 line too long (106 > 79 characters)
+-./legal_logic.py:77:80: E501 line too long (113 > 79 characters)
+-./legal_logic.py:84:80: E501 line too long (81 > 79 characters)
++./legal_logic.py:67:80: E501 line too long (106 > 79 characters)
++./legal_logic.py:73:80: E501 line too long (106 > 79 characters)
++./legal_logic.py:79:80: E501 line too long (113 > 79 characters)
++./legal_logic.py:85:80: E501 line too long (81 > 79 characters)
+ ./motion_drafter.py:4:1: E302 expected 2 blank lines, found 1
+ ./motion_drafter.py:4:80: E501 line too long (99 > 79 characters)
+ ./motion_drafter.py:7:1: W293 blank line contains whitespace
+ ./motion_drafter.py:12:1: W293 blank line contains whitespace
+ ./motion_drafter.py:16:1: W293 blank line contains whitespace
+-./motion_drafter.py:18:80: E501 line too long (91 > 79 characters)
+-./motion_drafter.py:19:80: E501 line too long (91 > 79 characters)
+-./motion_drafter.py:20:1: W293 blank line contains whitespace
+-./motion_drafter.py:24:1: W293 blank line contains whitespace
+-./motion_drafter.py:26:1: W293 blank line contains whitespace
+-./motion_drafter.py:29:1: W293 blank line contains whitespace
++./motion_drafter.py:22:1: W293 blank line contains whitespace
++./motion_drafter.py:25:80: E501 line too long (86 > 79 characters)
++./motion_drafter.py:27:80: E501 line too long (86 > 79 characters)
++./motion_drafter.py:28:1: W293 blank line contains whitespace
+ ./motion_drafter.py:31:1: W293 blank line contains whitespace
+-./motion_drafter.py:32:80: E501 line too long (85 > 79 characters)
+-./motion_drafter.py:33:80: E501 line too long (89 > 79 characters)
+-./motion_drafter.py:35:1: W293 blank line contains whitespace
+-./motion_drafter.py:37:1: W293 blank line contains whitespace
+-./motion_drafter.py:38:80: E501 line too long (83 > 79 characters)
+-./motion_drafter.py:40:80: E501 line too long (96 > 79 characters)
+-./motion_drafter.py:41:80: E501 line too long (110 > 79 characters)
+-./motion_drafter.py:42:80: E501 line too long (102 > 79 characters)
+-./motion_drafter.py:43:1: W293 blank line contains whitespace
+-./motion_drafter.py:45:1: W293 blank line contains whitespace
+-./motion_drafter.py:49:1: W293 blank line contains whitespace
+-./motion_drafter.py:51:1: W293 blank line contains whitespace
+-./motion_drafter.py:57:1: W293 blank line contains whitespace
+-./motion_drafter.py:59:1: W293 blank line contains whitespace
+-./motion_drafter.py:62:1: W293 blank line contains whitespace
+-./motion_drafter.py:63:80: E501 line too long (81 > 79 characters)
++./motion_drafter.py:33:1: W293 blank line contains whitespace
++./motion_drafter.py:36:1: W293 blank line contains whitespace
++./motion_drafter.py:38:1: W293 blank line contains whitespace
++./motion_drafter.py:39:80: E501 line too long (85 > 79 characters)
++./motion_drafter.py:40:80: E501 line too long (89 > 79 characters)
++./motion_drafter.py:42:1: W293 blank line contains whitespace
++./motion_drafter.py:44:1: W293 blank line contains whitespace
++./motion_drafter.py:45:80: E501 line too long (83 > 79 characters)
++./motion_drafter.py:47:80: E501 line too long (103 > 79 characters)
++./motion_drafter.py:48:80: E501 line too long (125 > 79 characters)
++./motion_drafter.py:49:80: E501 line too long (102 > 79 characters)
++./motion_drafter.py:50:1: W293 blank line contains whitespace
++./motion_drafter.py:52:1: W293 blank line contains whitespace
++./motion_drafter.py:56:1: W293 blank line contains whitespace
++./motion_drafter.py:58:1: W293 blank line contains whitespace
+ ./motion_drafter.py:64:1: W293 blank line contains whitespace
++./motion_drafter.py:66:1: W293 blank line contains whitespace
++./motion_drafter.py:69:1: W293 blank line contains whitespace
++./motion_drafter.py:70:80: E501 line too long (117 > 79 characters)
+ ./response_logic.py:3:1: E302 expected 2 blank lines, found 1
+ ./response_logic.py:6:1: W293 blank line contains whitespace
+ ./response_logic.py:9:1: W293 blank line contains whitespace
+@@ -157876,110 +157913,91 @@ FLAKE8 OUTPUT
+ ./streamlit-analyzer-fixed.py:193:17: W291 trailing whitespace
+ ./streamlit-analyzer-fixed.py:194:33: W291 trailing whitespace
+ ./streamlit-analyzer-fixed.py:195:23: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:199:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:211:80: E501 line too long (115 > 79 characters)
+-./streamlit-analyzer-fixed.py:213:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:200:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:213:80: E501 line too long (115 > 79 characters)
+ ./streamlit-analyzer-fixed.py:215:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:218:80: E501 line too long (89 > 79 characters)
+-./streamlit-analyzer-fixed.py:220:80: E501 line too long (125 > 79 characters)
+-./streamlit-analyzer-fixed.py:221:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:227:80: E501 line too long (95 > 79 characters)
+-./streamlit-analyzer-fixed.py:229:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:232:80: E501 line too long (121 > 79 characters)
+-./streamlit-analyzer-fixed.py:234:80: E501 line too long (109 > 79 characters)
+-./streamlit-analyzer-fixed.py:235:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:217:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:220:80: E501 line too long (89 > 79 characters)
++./streamlit-analyzer-fixed.py:222:80: E501 line too long (125 > 79 characters)
++./streamlit-analyzer-fixed.py:223:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:229:80: E501 line too long (95 > 79 characters)
++./streamlit-analyzer-fixed.py:231:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:234:80: E501 line too long (121 > 79 characters)
++./streamlit-analyzer-fixed.py:236:80: E501 line too long (109 > 79 characters)
+ ./streamlit-analyzer-fixed.py:237:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:240:80: E501 line too long (107 > 79 characters)
+-./streamlit-analyzer-fixed.py:241:80: E501 line too long (120 > 79 characters)
+-./streamlit-analyzer-fixed.py:242:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:245:80: E501 line too long (84 > 79 characters)
+-./streamlit-analyzer-fixed.py:248:1: E302 expected 2 blank lines, found 1
+-./streamlit-analyzer-fixed.py:253:1: E302 expected 2 blank lines, found 1
+-./streamlit-analyzer-fixed.py:253:80: E501 line too long (95 > 79 characters)
+-./streamlit-analyzer-fixed.py:253:96: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:257:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:264:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:272:80: E501 line too long (119 > 79 characters)
+-./streamlit-analyzer-fixed.py:274:80: E501 line too long (80 > 79 characters)
+-./streamlit-analyzer-fixed.py:276:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:286:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:294:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:298:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:302:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:306:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:318:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:320:80: E501 line too long (90 > 79 characters)
+-./streamlit-analyzer-fixed.py:321:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:239:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:242:80: E501 line too long (107 > 79 characters)
++./streamlit-analyzer-fixed.py:243:80: E501 line too long (120 > 79 characters)
++./streamlit-analyzer-fixed.py:244:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:247:80: E501 line too long (84 > 79 characters)
++./streamlit-analyzer-fixed.py:250:1: E302 expected 2 blank lines, found 1
++./streamlit-analyzer-fixed.py:255:1: E302 expected 2 blank lines, found 1
++./streamlit-analyzer-fixed.py:255:80: E501 line too long (95 > 79 characters)
++./streamlit-analyzer-fixed.py:255:96: W291 trailing whitespace
++./streamlit-analyzer-fixed.py:259:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:266:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:274:80: E501 line too long (119 > 79 characters)
++./streamlit-analyzer-fixed.py:276:80: E501 line too long (80 > 79 characters)
++./streamlit-analyzer-fixed.py:278:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:288:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:296:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:300:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:304:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:308:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:320:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:322:80: E501 line too long (90 > 79 characters)
+ ./streamlit-analyzer-fixed.py:323:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:328:80: E501 line too long (93 > 79 characters)
+-./streamlit-analyzer-fixed.py:330:80: E501 line too long (103 > 79 characters)
+-./streamlit-analyzer-fixed.py:331:80: E501 line too long (96 > 79 characters)
+-./streamlit-analyzer-fixed.py:332:80: E501 line too long (89 > 79 characters)
+-./streamlit-analyzer-fixed.py:333:80: E501 line too long (103 > 79 characters)
+-./streamlit-analyzer-fixed.py:334:80: E501 line too long (97 > 79 characters)
+-./streamlit-analyzer-fixed.py:335:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:338:1: E302 expected 2 blank lines, found 1
+-./streamlit-analyzer-fixed.py:343:80: E501 line too long (81 > 79 characters)
+-./streamlit-analyzer-fixed.py:347:1: E302 expected 2 blank lines, found 1
+-./streamlit-analyzer-fixed.py:353:24: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:376:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:325:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:330:80: E501 line too long (93 > 79 characters)
++./streamlit-analyzer-fixed.py:332:80: E501 line too long (103 > 79 characters)
++./streamlit-analyzer-fixed.py:333:80: E501 line too long (96 > 79 characters)
++./streamlit-analyzer-fixed.py:334:80: E501 line too long (89 > 79 characters)
++./streamlit-analyzer-fixed.py:335:80: E501 line too long (103 > 79 characters)
++./streamlit-analyzer-fixed.py:336:80: E501 line too long (97 > 79 characters)
++./streamlit-analyzer-fixed.py:337:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:340:1: E302 expected 2 blank lines, found 1
++./streamlit-analyzer-fixed.py:345:80: E501 line too long (81 > 79 characters)
++./streamlit-analyzer-fixed.py:349:1: E302 expected 2 blank lines, found 1
++./streamlit-analyzer-fixed.py:355:24: W291 trailing whitespace
+ ./streamlit-analyzer-fixed.py:378:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:381:80: E501 line too long (104 > 79 characters)
+-./streamlit-analyzer-fixed.py:383:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:385:80: E501 line too long (87 > 79 characters)
+-./streamlit-analyzer-fixed.py:386:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:390:80: E501 line too long (87 > 79 characters)
+-./streamlit-analyzer-fixed.py:391:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:396:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:380:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:383:80: E501 line too long (104 > 79 characters)
++./streamlit-analyzer-fixed.py:385:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:387:80: E501 line too long (87 > 79 characters)
++./streamlit-analyzer-fixed.py:388:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:392:80: E501 line too long (87 > 79 characters)
++./streamlit-analyzer-fixed.py:393:1: W293 blank line contains whitespace
+ ./streamlit-analyzer-fixed.py:398:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:401:80: E501 line too long (99 > 79 characters)
+-./streamlit-analyzer-fixed.py:402:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:405:80: E501 line too long (94 > 79 characters)
+-./streamlit-analyzer-fixed.py:407:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:408:80: E501 line too long (97 > 79 characters)
+-./streamlit-analyzer-fixed.py:414:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:417:80: E501 line too long (80 > 79 characters)
+-./streamlit-analyzer-fixed.py:419:80: E501 line too long (98 > 79 characters)
+-./streamlit-analyzer-fixed.py:420:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:423:80: E501 line too long (82 > 79 characters)
+-./streamlit-analyzer-fixed.py:423:83: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:426:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:434:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:400:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:403:80: E501 line too long (99 > 79 characters)
++./streamlit-analyzer-fixed.py:404:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:407:80: E501 line too long (94 > 79 characters)
++./streamlit-analyzer-fixed.py:409:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:410:80: E501 line too long (97 > 79 characters)
++./streamlit-analyzer-fixed.py:416:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:419:80: E501 line too long (80 > 79 characters)
++./streamlit-analyzer-fixed.py:421:80: E501 line too long (98 > 79 characters)
++./streamlit-analyzer-fixed.py:422:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:425:80: E501 line too long (82 > 79 characters)
++./streamlit-analyzer-fixed.py:425:83: W291 trailing whitespace
++./streamlit-analyzer-fixed.py:428:1: W293 blank line contains whitespace
+ ./streamlit-analyzer-fixed.py:436:1: W293 blank line contains whitespace
+ ./streamlit-analyzer-fixed.py:438:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:442:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:446:46: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:447:28: W291 trailing whitespace
+-./streamlit-analyzer-fixed.py:450:1: W293 blank line contains whitespace
+-./streamlit-analyzer-fixed.py:457:1: E305 expected 2 blank lines after class or function definition, found 1
++./streamlit-analyzer-fixed.py:440:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:444:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:448:46: W291 trailing whitespace
++./streamlit-analyzer-fixed.py:449:28: W291 trailing whitespace
++./streamlit-analyzer-fixed.py:452:1: W293 blank line contains whitespace
++./streamlit-analyzer-fixed.py:459:1: E305 expected 2 blank lines after class or function definition, found 1
+ ./streamlit-analyzer-m1.py:790:22: E999 SyntaxError: invalid syntax
+-./streamlit_app.py:4:1: F401 'typing.Optional' imported but unused
+-./streamlit_app.py:4:1: F401 'typing.Tuple' imported but unused
+-./streamlit_app.py:7:1: F401 'sys' imported but unused
+-./streamlit_app.py:10:1: F401 'datetime.datetime' imported but unused
+-./streamlit_app.py:20:1: E302 expected 2 blank lines, found 1
+-./streamlit_app.py:26:1: E302 expected 2 blank lines, found 1
+-./streamlit_app.py:32:1: E302 expected 2 blank lines, found 1
+-./streamlit_app.py:39:1: E305 expected 2 blank lines after class or function definition, found 1
+-./streamlit_app.py:42:80: E501 line too long (269 > 79 characters)
+-./streamlit_app.py:47:80: E501 line too long (84 > 79 characters)
+-./streamlit_app.py:50:80: E501 line too long (146 > 79 characters)
+-./streamlit_app.py:52:80: E501 line too long (95 > 79 characters)
+-./streamlit_app.py:63:1: W293 blank line contains whitespace
+-./streamlit_app.py:148:1: E303 too many blank lines (3)
+-./streamlit_app.py:154:1: W293 blank line contains whitespace
+-./streamlit_app.py:157:1: W293 blank line contains whitespace
+-./streamlit_app.py:158:80: E501 line too long (87 > 79 characters)
+-./streamlit_app.py:168:80: E501 line too long (87 > 79 characters)
+-./streamlit_app.py:187:80: E501 line too long (83 > 79 characters)
+-./streamlit_app.py:187:84: W291 trailing whitespace
+-./streamlit_app.py:191:80: E501 line too long (84 > 79 characters)
++./streamlit_app.py:312:12: E999 SyntaxError: invalid syntax
++./streamlit_app_2025-05-15.py:355:10: E999 SyntaxError: unmatched ')'
++./streamlit_app_backup-1.py:355:10: E999 SyntaxError: unmatched ')'
+ ./summary_generator.py:11:80: E501 line too long (89 > 79 characters)
+ ./summary_generator.py:17:1: E302 expected 2 blank lines, found 1
+ ./summary_generator.py:17:80: E501 line too long (143 > 79 characters)
+-./summary_generator.py:37:1: W293 blank line contains whitespace
+-./summary_generator.py:42:1: W293 blank line contains whitespace
+-./summary_generator.py:95:1: W391 blank line at end of file
++./summary_generator.py:40:1: W293 blank line contains whitespace
++./summary_generator.py:93:1: W391 blank line at end of file
+ ./test_integration.py:2:1: F401 'datetime.datetime' imported but unused
+ ./test_integration.py:7:1: E302 expected 2 blank lines, found 1
+ ./test_integration.py:12:1: W293 blank line contains whitespace
+@@ -157990,15 +158008,15 @@ FLAKE8 OUTPUT
+ ./tests/run_performance_tests.py:9:1: W293 blank line contains whitespace
+ ./tests/run_performance_tests.py:11:1: W293 blank line contains whitespace
+ ./tests/run_performance_tests.py:14:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:21:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:25:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:38:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:41:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:52:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:55:1: E302 expected 2 blank lines, found 1
+-./tests/run_performance_tests.py:58:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:68:1: W293 blank line contains whitespace
+-./tests/run_performance_tests.py:74:1: E305 expected 2 blank lines after class or function definition, found 1
++./tests/run_performance_tests.py:22:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:26:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:39:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:42:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:53:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:56:1: E302 expected 2 blank lines, found 1
++./tests/run_performance_tests.py:59:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:69:1: W293 blank line contains whitespace
++./tests/run_performance_tests.py:75:1: E305 expected 2 blank lines after class or function definition, found 1
+ ./tests/test_performance.py:3:1: F401 'datetime.datetime' imported but unused
+ ./tests/test_performance.py:5:80: E501 line too long (105 > 79 characters)
+ ./tests/test_performance.py:6:1: F401 'legal_logic.evaluate_rules' imported but unused
+@@ -158022,6 +158040,14 @@ FLAKE8 OUTPUT
+ ./tests/test_performance.py:95:1: W293 blank line contains whitespace
+ ./tests/test_performance.py:98:1: W293 blank line contains whitespace
+ ./tests/test_performance.py:102:1: E305 expected 2 blank lines after class or function definition, found 1
++./utils/config.py:22:1: W391 blank line at end of file
++./utils/forms.py:27:1: W391 blank line at end of file
++./utils/logging.py:25:1: W391 blank line at end of file
++./utils/session.py:6:1: F401 'typing.List' imported but unused
++./utils/session.py:6:1: F401 'typing.Dict' imported but unused
++./utils/session.py:6:1: F401 'typing.Any' imported but unused
++./utils/session.py:7:1: F401 'datetime.datetime' imported but unused
++./utils/session.py:31:1: W391 blank line at end of file
+ 
+ 
+ 
+@@ -164410,17 +164436,71 @@ VULTURE OUTPUT
+ .venv/lib/python3.11/site-packages/yaml/emitter.py:65: unused attribute 'sequence_context' (60% confidence)
+ .venv/lib/python3.11/site-packages/yaml/emitter.py:235: unused attribute 'sequence_context' (60% confidence)
+ .venv/lib/python3.11/site-packages/yaml/emitter.py:703: unused variable 'unicode_characters' (60% confidence)
++.vulture_whitelist.py:5: unused variable 'cumulativeUniform' (60% confidence)
++.vulture_whitelist.py:5: unused variable 'densityUniform' (60% confidence)
++.vulture_whitelist.py:5: unused variable 'sampleUniform' (60% confidence)
++.vulture_whitelist.py:8: unused variable 'SUCCESS_EOF' (60% confidence)
++.vulture_whitelist.py:9: unused variable 'onmessage' (60% confidence)
++.vulture_whitelist.py:11: unused variable 'responseType' (60% confidence)
++.vulture_whitelist.py:14: unused variable 'key_host' (60% confidence)
++.vulture_whitelist.py:14: unused variable 'key_port' (60% confidence)
++.vulture_whitelist.py:14: unused variable 'key_scheme' (60% confidence)
++.vulture_whitelist.py:14: unused variable 'key_timeout' (60% confidence)
++.vulture_whitelist.py:15: unused variable 'key_block' (60% confidence)
++.vulture_whitelist.py:15: unused variable 'key_retries' (60% confidence)
++.vulture_whitelist.py:15: unused variable 'key_source_address' (60% confidence)
++.vulture_whitelist.py:16: unused variable 'key_cert_file' (60% confidence)
++.vulture_whitelist.py:16: unused variable 'key_key_file' (60% confidence)
++.vulture_whitelist.py:16: unused variable 'key_key_password' (60% confidence)
++.vulture_whitelist.py:17: unused variable 'key_ca_cert_data' (60% confidence)
++.vulture_whitelist.py:17: unused variable 'key_ca_certs' (60% confidence)
++.vulture_whitelist.py:17: unused variable 'key_cert_reqs' (60% confidence)
++.vulture_whitelist.py:18: unused variable 'key_ssl_minimum_version' (60% confidence)
++.vulture_whitelist.py:18: unused variable 'key_ssl_version' (60% confidence)
++.vulture_whitelist.py:19: unused variable 'key_ca_cert_dir' (60% confidence)
++.vulture_whitelist.py:19: unused variable 'key_ssl_context' (60% confidence)
++.vulture_whitelist.py:19: unused variable 'key_ssl_maximum_version' (60% confidence)
++.vulture_whitelist.py:20: unused variable 'key__proxy' (60% confidence)
++.vulture_whitelist.py:20: unused variable 'key__proxy_headers' (60% confidence)
++.vulture_whitelist.py:20: unused variable 'key_headers' (60% confidence)
++.vulture_whitelist.py:20: unused variable 'key_maxsize' (60% confidence)
++.vulture_whitelist.py:21: unused variable 'key__proxy_config' (60% confidence)
++.vulture_whitelist.py:21: unused variable 'key__socks_options' (60% confidence)
++.vulture_whitelist.py:21: unused variable 'key_socket_options' (60% confidence)
++.vulture_whitelist.py:22: unused variable 'key_assert_fingerprint' (60% confidence)
++.vulture_whitelist.py:22: unused variable 'key_assert_hostname' (60% confidence)
++.vulture_whitelist.py:23: unused variable 'key_blocksize' (60% confidence)
++.vulture_whitelist.py:23: unused variable 'key_server_hostname' (60% confidence)
++.vulture_whitelist.py:26: unused variable 'compose_all' (60% confidence)
++.vulture_whitelist.py:26: unused variable 'full_load' (60% confidence)
++.vulture_whitelist.py:26: unused variable 'full_load_all' (60% confidence)
++.vulture_whitelist.py:27: unused variable 'safe_load_all' (60% confidence)
++.vulture_whitelist.py:27: unused variable 'unsafe_load' (60% confidence)
++.vulture_whitelist.py:27: unused variable 'unsafe_load_all' (60% confidence)
++.vulture_whitelist.py:28: unused variable 'safe_dump_all' (60% confidence)
++.vulture_whitelist.py:32: unused variable 'motion_generator' (60% confidence)
++.vulture_whitelist.py:35: unused variable 'parse_bandit' (60% confidence)
++.vulture_whitelist.py:35: unused variable 'parse_mypy' (60% confidence)
++.vulture_whitelist.py:35: unused variable 'parse_pylint' (60% confidence)
++.vulture_whitelist.py:36: unused variable 'parse_flake8' (60% confidence)
++.vulture_whitelist.py:36: unused variable 'parse_vulture' (60% confidence)
+ code-quality-checker-streamlit.py:80: unused function 'parse_pylint' (60% confidence)
+ code-quality-checker-streamlit.py:98: unused function 'parse_mypy' (60% confidence)
+ code-quality-checker-streamlit.py:116: unused function 'parse_bandit' (60% confidence)
+ code-quality-checker-streamlit.py:134: unused function 'parse_flake8' (60% confidence)
+ code-quality-checker-streamlit.py:152: unused function 'parse_vulture' (60% confidence)
++motion_drafter.py:4: unused function 'render_motion_template' (60% confidence)
+ streamlit-analyzer-fixed.py:87: unused function 'parse_pylint' (60% confidence)
+ streamlit-analyzer-fixed.py:105: unused function 'parse_mypy' (60% confidence)
+ streamlit-analyzer-fixed.py:123: unused function 'parse_bandit' (60% confidence)
+ streamlit-analyzer-fixed.py:141: unused function 'parse_flake8' (60% confidence)
+ streamlit-analyzer-fixed.py:159: unused function 'parse_vulture' (60% confidence)
+-streamlit_app.py:92: unused variable 'ENABLE_MOTION_GENERATOR' (60% confidence)
++summary_generator.py:82: unused function 'save_summary' (60% confidence)
++utils/forms.py:6: unused function 'render_intake_form' (60% confidence)
++utils/logging.py:7: unused function 'log_event' (60% confidence)
++utils/logging.py:17: unused function 'show_debug_panel' (60% confidence)
++utils/session.py:10: unused function 'init_session_state' (60% confidence)
++utils/session.py:25: unused function 'validate_session_state' (60% confidence)
+ 
+ 
+ 
+diff --git a/README.md b/README.md
+index e3113b1..c5fdb52 100644
+--- a/README.md
++++ b/README.md
+@@ -16,7 +16,7 @@ A symbolic AI-powered assistant designed to help tenants and legal professionals
+ - Clear status and reasoning
+ 
+ ### 3. AI-Powered Explanation
+-- GPT-3.5 generated explanations
++- GPT-3.5 generated narrative
+ - Natural language summaries
+ - Legal reasoning breakdown
+ - Case-specific guidance
+diff --git a/case-summary.txt b/case-summary.txt
+index 88e8d52..12f88b5 100644
+--- a/case-summary.txt
++++ b/case-summary.txt
+@@ -2,24 +2,24 @@
+ 🏠 GrizlyUDVacator: Case Summary
+ ============================================================
+ 
+-📅 Timestamp: 2025-05-15 17:06:31
++📅 Timestamp: 2025-05-15 17:47:46
+ 📁 Case: Tenant vs. Landlord
+ 
+ ------------------------------------------------------------
+ 🔍 User-Provided Facts
+ ------------------------------------------------------------
+-- Date Served:         2025-05-15
++- Date Served:         2015-05-15
+ - Motion Filed:        2025-05-15
+-- Participated:        No
+-- Actual Notice:       No
+-- Bad Legal Advice:    No
++- Participated:        Yes
++- Actual Notice:       Yes
++- Bad Legal Advice:    Yes
+ 
+ ------------------------------------------------------------
+ ⚖️ Legal Rule Evaluation (CCP § 473.5)
+ ------------------------------------------------------------
+-- Outcome:             Relief Possible
+-- Reason:              Motion filed within 180 days — timely under CCP § 473.5.
+-- Rules Applied:       not participated_before_default(P), not actual_notice(P)
++- Outcome:             Relief Barred
++- Reason:              Late motion and tenant participated before default — barred under CCP § 473.5(c).
++- Rules Applied:       late_motion(P), relied_on_bad_advice(P)
+ 
+ ------------------------------------------------------------
+ 🧠 GPT Explanation
+@@ -27,12 +27,12 @@
+ 
+     Based on the evaluation of your case under California Code of Civil Procedure § 473.5:
+ 
+-    Status: Relief Possible
++    Status: Relief Barred
+     
+-    Reason: Motion filed within 180 days — timely under CCP § 473.5.
++    Reason: Late motion and tenant participated before default — barred under CCP § 473.5(c).
+     
+     The following rules were applied:
+-    not participated_before_default(P), not actual_notice(P)
++    late_motion(P), relied_on_bad_advice(P)
+     
+     This evaluation considers:
+     - The 180-day filing requirement
+diff --git a/grizly_app/ui/decision_tree_tab.py b/grizly_app/ui/decision_tree_tab.py
+index 3c56d07..d3c3ce3 100644
+--- a/grizly_app/ui/decision_tree_tab.py
++++ b/grizly_app/ui/decision_tree_tab.py
+@@ -1,48 +1,6 @@
+ import streamlit as st
+-import graphviz
+-from ui.decision_tree_header import render_decision_tree_header
+-
+-def create_decision_tree(result, facts):
+-    """Create and configure the decision tree visualization."""
+-    tree = graphviz.Digraph()
+-    tree.attr(rankdir='TB', size='6')
+-
+-    # Define nodes
+-    tree.node("A", "Was motion filed within 180 days?")
+-    tree.node("B", "✅ Relief Granted (Timely)")
+-    tree.node("C", "Did tenant participate before default?")
+-    tree.node("D", "❌ Relief Barred (473.5c)")
+-    tree.node("E", "Was there no notice or bad legal advice?")
+-    tree.node("F", "✅ Relief Granted (Due Process or Equity)")
+-    tree.node("G", "❌ No Relief")
+-
+-    # Define edges
+-    tree.edge("A", "B", label="Yes")
+-    tree.edge("A", "C", label="No")
+-    tree.edge("C", "D", label="Yes")
+-    tree.edge("C", "E", label="No")
+-    tree.edge("E", "F", label="Yes")
+-    tree.edge("E", "G", label="No")
+-
+-    return tree
+-
+-def highlight_decision_path(tree, result, facts):
+-    """Highlight the decision path based on case facts."""
+-    timely = "within 180" in result["reason"].lower()
+-    participated = facts.get("participated", False)
+-    actual_notice = facts.get("actual_notice", False)
+-    bad_advice = facts.get("relied_on_bad_advice", False)
+-
+-    if timely:
+-        tree.node("B", "✅ Relief Granted (Timely)", style="filled", fillcolor="lightgreen")
+-    elif not timely and participated:
+-        tree.node("D", "❌ Relief Barred (473.5c)", style="filled", fillcolor="lightcoral")
+-    elif not timely and not actual_notice and not participated:
+-        tree.node("F", "✅ Relief Granted (Due Process)", style="filled", fillcolor="lightgreen")
+-    elif not timely and bad_advice and not participated:
+-        tree.node("F", "✅ Relief Granted (Bad Advice)", style="filled", fillcolor="lightgreen")
+-    else:
+-        tree.node("G", "❌ No Relief", style="filled", fillcolor="lightcoral")
++from .decision_tree_header import render_decision_tree_header
++from ..logic.decision_tree_logic import create_decision_tree, highlight_decision_path
+ 
+ def export_decision_data(result, facts):
+     """Export decision data in multiple formats."""
+diff --git a/legal_logic.py b/legal_logic.py
+index c812610..91d87ee 100644
+--- a/legal_logic.py
++++ b/legal_logic.py
+@@ -1,30 +1,44 @@
+ from datetime import datetime
+ from typing import Dict, Any, List
+ 
++# =============================================================================
++# LEGAL LOGIC MODULE: CCP § 473.5 Eligibility Evaluation
++# -----------------------------------------------------------------------------
++# This module evaluates whether a tenant is eligible to set aside a default
++# judgment under California Code of Civil Procedure § 473.5.
++# =============================================================================
++
+ def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+     """
+-    Evaluate post-default UD relief eligibility under CCP § 473.5.
+-    
+-    Args:
+-        facts: Dictionary containing case facts with keys:
+-            - served_date: str - Date when summons was served
+-            - motion_date: str - Date when motion was filed
+-            - participated: bool - Whether tenant participated before default
+-            - actual_notice: bool - Whether tenant had actual notice
+-            - relied_on_bad_advice: bool - Whether tenant relied on bad legal advice
+-            
+-    Returns:
+-        Dict containing:
+-            - status: str - Eligibility status
+-            - reason: str - Explanation of status
+-            - rules_applied: List[str] - List of rules applied in evaluation
++    Evaluates post-default relief eligibility under CCP § 473.5 based on user input.
++
++    Parameters
++    ----------
++    facts : dict
++        Dictionary containing:
++            - served_date: str in "YYYY-MM-DD"
++            - motion_date: str in "YYYY-MM-DD"
++            - participated: bool
++            - actual_notice: bool
++            - relied_on_bad_advice: bool
++
++    Returns
++    -------
++    dict
++        {
++            "status": str,               # One of: "relief_possible", "relief_barred", "ineligible", "incomplete"
++            "reason": str,               # Human-readable explanation of legal logic
++            "rules_applied": List[str]   # Which legal rule(s) were applied
++        }
+     """
++
++    # Default output if no conditions are met
+     result = {
+-        'status': 'ineligible',
+-        'reason': '',
+-        'rules_applied': []
++        "status": "ineligible",
++        "reason": "No qualifying conditions met under CCP § 473.5.",
++        "rules_applied": []
+     }
+-    
++
+     try:
+         served_date = facts.get("served_date")
+         motion_date = facts.get("motion_date")
+@@ -38,52 +52,105 @@ def evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+             
+         served = datetime.strptime(served_date, "%Y-%m-%d")
+         motion = datetime.strptime(motion_date, "%Y-%m-%d")
++        
++        # Check for motion before service first
++        if motion < served:
++            return {
++                "status": "needs_review",
++                "reason": "Motion filed before service date — recommend attorney review.",
++                "rules_applied": []
++            }
++
++        # Check for future dates
++        today = datetime.now().date()
++        if served > today or motion > today:
++            return {
++                "status": "needs_review",
++                "reason": "Future dates — recommend attorney review.",
++                "rules_applied": []
++            }
++
++        # If dates are valid, proceed with the rest of the logic
++        late = (motion - served).days > 180
++        participated = facts.get("participated", False)
++        actual_notice = facts.get("actual_notice", False)
++        relied_on_bad_advice = facts.get("relied_on_bad_advice", False)
++
++        rules_applied = []
++        if late:
++            rules_applied.append("CCP § 473.5")
++        if not participated:
++            rules_applied.append("CCP § 473.5")
++        if not actual_notice:
++            rules_applied.append("CCP § 473.5")
++        if relied_on_bad_advice:
++            rules_applied.append("CCP § 473.5")
++
++        # Legal Logic
++        if late:
++            if participated:
++                return {
++                    "status": "relief_barred",
++                    "reason": "Late motion and tenant participated before default — barred under CCP § 473.5(c).",
++                    "rules_applied": []
++                }
++            elif not actual_notice:
++                return {
++                    "status": "relief_possible",
++                    "reason": "Late motion overridden by due process violation — no notice and no participation.",
++                    "rules_applied": ["CCP § 473.5"]
++                }
++            elif relied_on_bad_advice:
++                return {
++                    "status": "relief_possible",
++                    "reason": "Late motion may be excused due to reliance on bad legal advice — constructive diligence.",
++                    "rules_applied": ["CCP § 473.5"]
++                }
++            else:
++                return {
++                    "status": "relief_barred",
++                    "reason": "Motion filed after 180 days without valid excuse.",
++                    "rules_applied": []
++                }
++        elif not late and participated:
++            if not actual_notice:
++                return {
++                    "status": "relief_possible",
++                    "reason": "Motion within 180 days but no notice — due process violation.",
++                    "rules_applied": ["CCP § 473.5"]
++                }
++            elif relied_on_bad_advice:
++                return {
++                    "status": "relief_possible",
++                    "reason": "Motion within 180 days and reliance on bad legal advice.",
++                    "rules_applied": ["CCP § 473.5"]
++                }
++            else:
++                return {
++                    "status": "relief_barred",
++                    "reason": "Motion within 180 days but tenant participated before default.",
++                    "rules_applied": []
++                }
++        else:
++            return {
++                "status": "relief_possible",
++                "reason": "Motion within 180 days and no participation before default.",
++                "rules_applied": ["CCP § 473.5"]
++            }
++
+     except (ValueError, TypeError):
+         return {
+             "status": "incomplete",
+-            "reason": "Missing or invalid date(s).",
++            "reason": "Invalid date format.",
+             "rules_applied": []
+         }
+ 
+-    late = (motion - served).days > 180
+-    participated = facts.get("participated", False)
+-    actual_notice = facts.get("actual_notice", True)
+-    relied_on_bad_advice = facts.get("relied_on_bad_advice", False)
+ 
+-    rules_applied = []
+-    if late: rules_applied.append("late_motion(P)")
+-    if not participated: rules_applied.append("not participated_before_default(P)")
+-    if not actual_notice: rules_applied.append("not actual_notice(P)")
+-    if relied_on_bad_advice: rules_applied.append("relied_on_bad_advice(P)")
+-
+-    # Legal Logic
+-    if late and participated:
+-        return {
+-            "status": "relief_barred",
+-            "reason": "Late motion and tenant participated before default — barred under CCP § 473.5(c).",
+-            "rules_applied": rules_applied
+-        }
+-    elif late and not participated and not actual_notice:
+-        return {
+-            "status": "relief_possible",
+-            "reason": "Late motion overridden by due process violation — no notice and no participation.",
+-            "rules_applied": rules_applied
+-        }
+-    elif late and not participated and relied_on_bad_advice:
+-        return {
+-            "status": "relief_possible",
+-            "reason": "Late motion may be excused due to reliance on bad legal advice — constructive diligence.",
+-            "rules_applied": rules_applied
+-        }
+-    elif not late:
+-        return {
+-            "status": "relief_possible",
+-            "reason": "Motion filed within 180 days — timely under CCP § 473.5.",
+-            "rules_applied": rules_applied
+-        }
+-    else:
+-        return {
+-            "status": "needs_review",
+-            "reason": "Unclear eligibility — recommend attorney review.",
+-            "rules_applied": rules_applied
+         }
++
++    return result
++
++    # -------------------------------------------------------------------------
++    # 4. DEFAULT RETURN (IF NO CONDITIONS MET)
++    # -------------------------------------------------------------------------
++    return result
+diff --git a/motion_drafter.py b/motion_drafter.py
+deleted file mode 100644
+index a9eb3c0..0000000
+--- a/motion_drafter.py
++++ /dev/null
+@@ -1,70 +0,0 @@
+-from datetime import datetime
+-from typing import Dict, Any
+-
+-def render_motion_template(facts: Dict[str, Any], result: Dict[str, Any], explanation: str) -> str:
+-    """
+-    Generate a motion draft based on evaluated facts and legal analysis.
+-    
+-    Args:
+-        facts (Dict): Case facts from intake form
+-        result (Dict): Legal evaluation result
+-        explanation (str): GPT-generated explanation
+-        
+-    Returns:
+-        str: Draft motion text
+-    """
+-    
+-    # Get all potentially missing keys with defaults
+-    defendant_name = facts.get('defendant_name', '[DEFENDANT NAME]')
+-    case_number = facts.get('case_number', '[CASE NUMBER]')
+-    served_date = facts.get('served_date', '[DATE SERVED]')
+-    motion_date = facts.get('motion_date', '[DATE FILED]')
+-    
+-    # Format dates if they exist
+-    if served_date != '[DATE SERVED]':
+-        served_date = datetime.strptime(served_date, '%Y-%m-%d').strftime('%B %d, %Y')
+-    if motion_date != '[DATE FILED]':
+-        motion_date = datetime.strptime(motion_date, '%Y-%m-%d').strftime('%B %d, %Y')
+-    
+-    return f"""
+-    [This is a rough drat/demo. Attorney can replace this template. ]
+-    
+-    MOTION TO VACATE DEFAULT AND SET ASIDE DEFAULT JUDGMENT
+-    
+-    CASE NAME: [Case Name]
+-    CASE NUMBER: {case_number}
+-    
+-    I. INTRODUCTION
+-    
+-    1. This motion is brought pursuant to California Code of Civil Procedure § 473.5.
+-    2. The motion is based on this notice of motion, the attached points and authorities,
+-       and any oral argument that may be heard by the Court.
+-    
+-    II. FACTUAL BACKGROUND
+-    
+-    1. On {served_date}, Plaintiff served Defendant with the Summons and Complaint.
+-    2. Defendant did not appear or answer the Complaint due to:
+-       a. {"Actual notice of the lawsuit" if facts.get('actual_notice', False) else "No actual notice"}
+-       b. {"Reliance on bad legal advice" if facts.get('relied_on_bad_advice', False) else "No reliance on bad legal advice"}
+-    3. On {motion_date}, Defendant filed this motion to vacate default and set aside default judgment.
+-    
+-    III. LEGAL ARGUMENT
+-    
+-    1. Motion is timely under CCP § 473.5
+-    2. {result.get('reason', 'Legal reason not specified')}
+-    3. {explanation}
+-    
+-    IV. RELIEF REQUESTED
+-    
+-    Defendant respectfully requests that the Court:
+-    1. Vacate the default entered against Defendant
+-    2. Set aside the default judgment
+-    3. Allow Defendant to answer the Complaint
+-    4. Grant such other and further relief as the Court deems just and proper
+-    
+-    DATED: {datetime.now().strftime('%B %d, %Y')}
+-    
+-    ___________________________
+-    {defendant_name}
+-    
+-    [This is a draft template. This is for research purposes only. Please consult with an attorney before filing.]"""
+diff --git a/response_logic.py b/response_logic.py
+deleted file mode 100644
+index 008b462..0000000
+--- a/response_logic.py
++++ /dev/null
+@@ -1,30 +0,0 @@
+-from typing import Dict
+-
+-def explain_output(result: Dict) -> str:
+-    """
+-    Generate a GPT-friendly explanation of the evaluation result.
+-    
+-    Args:
+-        result (Dict): Evaluation result from evaluate_rules
+-        
+-    Returns:
+-        str: Natural language explanation
+-    """
+-    return f"""
+-    Based on the evaluation of your case under California Code of Civil Procedure § 473.5:
+-
+-    Status: {result['status'].replace('_', ' ').title()}
+-    
+-    Reason: {result['reason']}
+-    
+-    The following rules were applied:
+-    {', '.join(result['rules_applied'])}
+-    
+-    This evaluation considers:
+-    - The 180-day filing requirement
+-    - Whether you participated in the lawsuit
+-    - Whether you had actual notice of the lawsuit
+-    - Whether you relied on bad legal advice
+-    
+-    If you have any questions about this evaluation, feel free to ask!
+-    """
+diff --git a/streamlit_analysis_report.md b/streamlit_analysis_report.md
+index b4256f9..0a14a0b 100644
+--- a/streamlit_analysis_report.md
++++ b/streamlit_analysis_report.md
+@@ -1,5 +1,5 @@
+ # Streamlit Static Analysis Report
+-Generated: 2025-05-15 15:33:50
++Generated: 2025-05-15 23:25:01
+ 
+ ## Tools Summary
+ - **pylint** (🔥 Essential): ✓ Ran successfully
+@@ -430,6 +430,41 @@ Generated: 2025-05-15 15:33:50
+ - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:90): unused variable 'key_assert_fingerprint' (60% confidence)
+ - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:91): unused variable 'key_server_hostname' (60% confidence)
+ - **vulture** (.venv/lib/python3.11/site-packages/urllib3/poolmanager.py:92): unused variable 'key_blocksize' (60% confidence)
++- **vulture** (.vulture_whitelist.py:5): unused variable 'cumulativeUniform' (60% confidence)
++- **vulture** (.vulture_whitelist.py:5): unused variable 'densityUniform' (60% confidence)
++- **vulture** (.vulture_whitelist.py:5): unused variable 'sampleUniform' (60% confidence)
++- **vulture** (.vulture_whitelist.py:14): unused variable 'key_host' (60% confidence)
++- **vulture** (.vulture_whitelist.py:14): unused variable 'key_port' (60% confidence)
++- **vulture** (.vulture_whitelist.py:14): unused variable 'key_scheme' (60% confidence)
++- **vulture** (.vulture_whitelist.py:14): unused variable 'key_timeout' (60% confidence)
++- **vulture** (.vulture_whitelist.py:15): unused variable 'key_block' (60% confidence)
++- **vulture** (.vulture_whitelist.py:15): unused variable 'key_retries' (60% confidence)
++- **vulture** (.vulture_whitelist.py:15): unused variable 'key_source_address' (60% confidence)
++- **vulture** (.vulture_whitelist.py:16): unused variable 'key_cert_file' (60% confidence)
++- **vulture** (.vulture_whitelist.py:16): unused variable 'key_key_file' (60% confidence)
++- **vulture** (.vulture_whitelist.py:16): unused variable 'key_key_password' (60% confidence)
++- **vulture** (.vulture_whitelist.py:17): unused variable 'key_ca_cert_data' (60% confidence)
++- **vulture** (.vulture_whitelist.py:17): unused variable 'key_ca_certs' (60% confidence)
++- **vulture** (.vulture_whitelist.py:17): unused variable 'key_cert_reqs' (60% confidence)
++- **vulture** (.vulture_whitelist.py:18): unused variable 'key_ssl_minimum_version' (60% confidence)
++- **vulture** (.vulture_whitelist.py:18): unused variable 'key_ssl_version' (60% confidence)
++- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ca_cert_dir' (60% confidence)
++- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ssl_context' (60% confidence)
++- **vulture** (.vulture_whitelist.py:19): unused variable 'key_ssl_maximum_version' (60% confidence)
++- **vulture** (.vulture_whitelist.py:20): unused variable 'key__proxy' (60% confidence)
++- **vulture** (.vulture_whitelist.py:20): unused variable 'key__proxy_headers' (60% confidence)
++- **vulture** (.vulture_whitelist.py:20): unused variable 'key_headers' (60% confidence)
++- **vulture** (.vulture_whitelist.py:20): unused variable 'key_maxsize' (60% confidence)
++- **vulture** (.vulture_whitelist.py:21): unused variable 'key__proxy_config' (60% confidence)
++- **vulture** (.vulture_whitelist.py:21): unused variable 'key__socks_options' (60% confidence)
++- **vulture** (.vulture_whitelist.py:21): unused variable 'key_socket_options' (60% confidence)
++- **vulture** (.vulture_whitelist.py:22): unused variable 'key_assert_fingerprint' (60% confidence)
++- **vulture** (.vulture_whitelist.py:22): unused variable 'key_assert_hostname' (60% confidence)
++- **vulture** (.vulture_whitelist.py:23): unused variable 'key_blocksize' (60% confidence)
++- **vulture** (.vulture_whitelist.py:23): unused variable 'key_server_hostname' (60% confidence)
++- **vulture** (utils/forms.py:6): unused function 'render_intake_form' (60% confidence)
++- **vulture** (utils/session.py:10): unused function 'init_session_state' (60% confidence)
++- **vulture** (utils/session.py:25): unused function 'validate_session_state' (60% confidence)
+ 
+ ## Detailed Results
+ ### pylint (🔥 Essential)
+@@ -1393,7 +1428,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ #### compat.py
+ - Line 69: unused variable 'is_win' (60% confidence) (UNUSED)
+ - Line 81: unused variable 'is_posix' (60% confidence) (UNUSED)
+-- Line 94: unused variable 'is_darwin' (60% confidence) (UNUSED)
+ - Line 129: unused function 'safe_encode' (60% confidence) (UNUSED)
+ - Line 133: unused function 'safe_encode' (60% confidence) (UNUSED)
+ - Line 137: unused function 'safe_encode' (60% confidence) (UNUSED)
+@@ -1437,7 +1471,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 340: unused method 'list_traverse' (60% confidence) (UNUSED)
+ 
+ #### util.py
+-- Line 361: unused attribute '_proc' (60% confidence) (UNUSED)
+ - Line 400: unused method 'list_traverse' (60% confidence) (UNUSED)
+ - Line 619: unused method 'list_traverse' (60% confidence) (UNUSED)
+ 
+@@ -3238,8 +3271,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 12: unused class 'ModuleTester' (60% confidence) (UNUSED)
+ - Line 45: unused attribute 'testnames' (60% confidence) (UNUSED)
+ - Line 110: unused method 'test_0' (60% confidence) (UNUSED)
+-- Line 121: unused method 'test_1' (60% confidence) (UNUSED)
+-- Line 149: unused method 'test_2' (60% confidence) (UNUSED)
+ - Line 192: unused method 'test_3' (60% confidence) (UNUSED)
+ - Line 212: unused method 'test_4' (60% confidence) (UNUSED)
+ - Line 236: unused method 'test_5' (60% confidence) (UNUSED)
+@@ -7017,7 +7048,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 40: unused function 'method_caller' (60% confidence) (UNUSED)
+ - Line 241: unused function 'result_invoke' (60% confidence) (UNUSED)
+ - Line 269: unused function 'call_aside' (60% confidence) (UNUSED)
+-- Line 341: unused variable 'attempt' (60% confidence) (UNUSED)
+ - Line 376: unused function 'print_yielded' (60% confidence) (UNUSED)
+ - Line 410: unused function 'assign_params' (60% confidence) (UNUSED)
+ - Line 442: unused function 'save_method_args' (60% confidence) (UNUSED)
+@@ -7174,6 +7204,24 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 291: unused method 'iter_cache_paths' (60% confidence) (UNUSED)
+ - Line 296: unused method 'iter_runtime_paths' (60% confidence) (UNUSED)
+ 
++#### _common.py
++- Line 785: unused attribute '_CHUNK_SIZE' (60% confidence) (UNUSED)
++
++#### _psbsd.py
++- Line 882: unused variable 'nt_mmap_grouped' (60% confidence) (UNUSED)
++- Line 885: unused variable 'nt_mmap_ext' (60% confidence) (UNUSED)
++
++#### _pssunos.py
++- Line 672: unused variable 'nt_mmap_grouped' (60% confidence) (UNUSED)
++- Line 673: unused variable 'nt_mmap_ext' (60% confidence) (UNUSED)
++
++#### __init__.py
++- Line 2015: unused function 'cleanup_test_procs' (60% confidence) (UNUSED)
++
++#### test_windows.py
++- Line 59: unused function 'powershell' (60% confidence) (UNUSED)
++- Line 74: unused function 'wmic' (60% confidence) (UNUSED)
++
+ #### __init__.py
+ - Line 112: unused function 'show_info' (60% confidence) (UNUSED)
+ - Line 342: unused function 'create_library_symlinks' (60% confidence) (UNUSED)
+@@ -8569,7 +8617,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 40: unused function 'method_caller' (60% confidence) (UNUSED)
+ - Line 241: unused function 'result_invoke' (60% confidence) (UNUSED)
+ - Line 269: unused function 'call_aside' (60% confidence) (UNUSED)
+-- Line 341: unused variable 'attempt' (60% confidence) (UNUSED)
+ - Line 376: unused function 'print_yielded' (60% confidence) (UNUSED)
+ - Line 410: unused function 'assign_params' (60% confidence) (UNUSED)
+ - Line 442: unused function 'save_method_args' (60% confidence) (UNUSED)
+@@ -9373,9 +9420,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ 
+ #### event_based_path_watcher.py
+ - Line 71: unused method 'close_all' (60% confidence) (UNUSED)
+-- Line 399: unused method 'on_created' (60% confidence) (UNUSED)
+-- Line 402: unused method 'on_modified' (60% confidence) (UNUSED)
+-- Line 405: unused method 'on_moved' (60% confidence) (UNUSED)
+ 
+ #### polling_path_watcher.py
+ - Line 38: unused method 'close_all' (60% confidence) (UNUSED)
+@@ -9464,11 +9508,6 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 42: unused class 'ReturnValueIgnoredError' (60% confidence) (UNUSED)
+ - Line 69: unused variable 'cancel_futures' (100% confidence) (UNUSED)
+ 
+-#### curl_httpclient.py
+-- Line 156: unused variable 'num_handles' (60% confidence) (UNUSED)
+-- Line 168: unused variable 'num_handles' (60% confidence) (UNUSED)
+-- Line 198: unused variable 'num_handles' (60% confidence) (UNUSED)
+-
+ #### gen.py
+ - Line 118: unused class 'KeyReuseError' (60% confidence) (UNUSED)
+ - Line 122: unused class 'UnknownKeyError' (60% confidence) (UNUSED)
+@@ -9692,6 +9731,59 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 85: unused variable 'subjectAltName' (60% confidence) (UNUSED)
+ - Line 87: unused variable 'serialNumber' (60% confidence) (UNUSED)
+ 
++#### events.py
++- Line 123: unused variable 'is_synthetic' (60% confidence) (UNUSED)
++- Line 368: unused class 'RegexMatchingEventHandler' (60% confidence) (UNUSED)
++- Line 451: unused class 'LoggingEventHandler' (60% confidence) (UNUSED)
++
++#### api.py
++- Line 253: unused method '_remove_handlers_for_watch' (60% confidence) (UNUSED)
++- Line 256: unused property 'emitters' (60% confidence) (UNUSED)
++- Line 317: unused method 'add_handler_for_watch' (60% confidence) (UNUSED)
++- Line 335: unused method 'remove_handler_for_watch' (60% confidence) (UNUSED)
++
++#### fsevents2.py
++- Line 123: unused variable 'stream_ref' (100% confidence) (UNUSED)
++- Line 124: unused variable 'client_callback_info' (100% confidence) (UNUSED)
++- Line 152: unused attribute 'is_change_owner' (60% confidence) (UNUSED)
++- Line 154: unused attribute 'is_finder_info_mod' (60% confidence) (UNUSED)
++- Line 251: unused class 'FSEventsObserver2' (60% confidence) (UNUSED)
++
++#### inotify_c.py
++- Line 52: unused variable 'IN_UNMOUNT' (60% confidence) (UNUSED)
++- Line 53: unused variable 'IN_Q_OVERFLOW' (60% confidence) (UNUSED)
++- Line 57: unused variable 'IN_ONLYDIR' (60% confidence) (UNUSED)
++- Line 59: unused variable 'IN_EXCL_UNLINK' (60% confidence) (UNUSED)
++- Line 60: unused variable 'IN_MASK_ADD' (60% confidence) (UNUSED)
++- Line 62: unused variable 'IN_ONESHOT' (60% confidence) (UNUSED)
++- Line 65: unused variable 'IN_ALL_EVENTS' (60% confidence) (UNUSED)
++- Line 84: unused variable 'IN_CLOEXEC' (60% confidence) (UNUSED)
++- Line 85: unused variable 'IN_NONBLOCK' (60% confidence) (UNUSED)
++- Line 210: unused method 'clear_move_records' (60% confidence) (UNUSED)
++- Line 526: unused property 'is_access' (60% confidence) (UNUSED)
++- Line 550: unused property 'is_move' (60% confidence) (UNUSED)
++
++#### polling.py
++- Line 126: unused class 'PollingObserverVFS' (60% confidence) (UNUSED)
++
++#### winapi.py
++- Line 54: unused variable 'FILE_ACTION_OVERFLOW' (60% confidence) (UNUSED)
++- Line 57: unused variable 'FILE_ACTION_ADDED' (60% confidence) (UNUSED)
++- Line 61: unused variable 'THREAD_TERMINATE' (60% confidence) (UNUSED)
++- Line 64: unused variable 'WAIT_ABANDONED' (60% confidence) (UNUSED)
++- Line 65: unused variable 'WAIT_IO_COMPLETION' (60% confidence) (UNUSED)
++- Line 67: unused variable 'WAIT_TIMEOUT' (60% confidence) (UNUSED)
++
++#### __init__.py
++- Line 191: unused attribute 'restart_count' (60% confidence) (UNUSED)
++- Line 282: unused attribute 'restart_count' (60% confidence) (UNUSED)
++
++#### watchmedo.py
++- Line 56: unused method '_split_lines' (60% confidence) (UNUSED)
++- Line 217: unused function 'tricks_from' (60% confidence) (UNUSED)
++- Line 328: unused function 'tricks_generate_yaml' (60% confidence) (UNUSED)
++- Line 615: unused function 'auto_restart' (60% confidence) (UNUSED)
++
+ #### __init__.py
+ - Line 62: unused function 'compose_all' (60% confidence) (UNUSED)
+ - Line 97: unused function 'full_load' (60% confidence) (UNUSED)
+@@ -9710,6 +9802,56 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 235: unused attribute 'sequence_context' (60% confidence) (UNUSED)
+ - Line 703: unused variable 'unicode_characters' (60% confidence) (UNUSED)
+ 
++#### .vulture_whitelist.py
++- Line 5: unused variable 'cumulativeUniform' (60% confidence) (UNUSED)
++- Line 5: unused variable 'densityUniform' (60% confidence) (UNUSED)
++- Line 5: unused variable 'sampleUniform' (60% confidence) (UNUSED)
++- Line 8: unused variable 'SUCCESS_EOF' (60% confidence) (UNUSED)
++- Line 9: unused variable 'onmessage' (60% confidence) (UNUSED)
++- Line 11: unused variable 'responseType' (60% confidence) (UNUSED)
++- Line 14: unused variable 'key_host' (60% confidence) (UNUSED)
++- Line 14: unused variable 'key_port' (60% confidence) (UNUSED)
++- Line 14: unused variable 'key_scheme' (60% confidence) (UNUSED)
++- Line 14: unused variable 'key_timeout' (60% confidence) (UNUSED)
++- Line 15: unused variable 'key_block' (60% confidence) (UNUSED)
++- Line 15: unused variable 'key_retries' (60% confidence) (UNUSED)
++- Line 15: unused variable 'key_source_address' (60% confidence) (UNUSED)
++- Line 16: unused variable 'key_cert_file' (60% confidence) (UNUSED)
++- Line 16: unused variable 'key_key_file' (60% confidence) (UNUSED)
++- Line 16: unused variable 'key_key_password' (60% confidence) (UNUSED)
++- Line 17: unused variable 'key_ca_cert_data' (60% confidence) (UNUSED)
++- Line 17: unused variable 'key_ca_certs' (60% confidence) (UNUSED)
++- Line 17: unused variable 'key_cert_reqs' (60% confidence) (UNUSED)
++- Line 18: unused variable 'key_ssl_minimum_version' (60% confidence) (UNUSED)
++- Line 18: unused variable 'key_ssl_version' (60% confidence) (UNUSED)
++- Line 19: unused variable 'key_ca_cert_dir' (60% confidence) (UNUSED)
++- Line 19: unused variable 'key_ssl_context' (60% confidence) (UNUSED)
++- Line 19: unused variable 'key_ssl_maximum_version' (60% confidence) (UNUSED)
++- Line 20: unused variable 'key__proxy' (60% confidence) (UNUSED)
++- Line 20: unused variable 'key__proxy_headers' (60% confidence) (UNUSED)
++- Line 20: unused variable 'key_headers' (60% confidence) (UNUSED)
++- Line 20: unused variable 'key_maxsize' (60% confidence) (UNUSED)
++- Line 21: unused variable 'key__proxy_config' (60% confidence) (UNUSED)
++- Line 21: unused variable 'key__socks_options' (60% confidence) (UNUSED)
++- Line 21: unused variable 'key_socket_options' (60% confidence) (UNUSED)
++- Line 22: unused variable 'key_assert_fingerprint' (60% confidence) (UNUSED)
++- Line 22: unused variable 'key_assert_hostname' (60% confidence) (UNUSED)
++- Line 23: unused variable 'key_blocksize' (60% confidence) (UNUSED)
++- Line 23: unused variable 'key_server_hostname' (60% confidence) (UNUSED)
++- Line 26: unused variable 'compose_all' (60% confidence) (UNUSED)
++- Line 26: unused variable 'full_load' (60% confidence) (UNUSED)
++- Line 26: unused variable 'full_load_all' (60% confidence) (UNUSED)
++- Line 27: unused variable 'safe_load_all' (60% confidence) (UNUSED)
++- Line 27: unused variable 'unsafe_load' (60% confidence) (UNUSED)
++- Line 27: unused variable 'unsafe_load_all' (60% confidence) (UNUSED)
++- Line 28: unused variable 'safe_dump_all' (60% confidence) (UNUSED)
++- Line 32: unused variable 'motion_generator' (60% confidence) (UNUSED)
++- Line 35: unused variable 'parse_bandit' (60% confidence) (UNUSED)
++- Line 35: unused variable 'parse_mypy' (60% confidence) (UNUSED)
++- Line 35: unused variable 'parse_pylint' (60% confidence) (UNUSED)
++- Line 36: unused variable 'parse_flake8' (60% confidence) (UNUSED)
++- Line 36: unused variable 'parse_vulture' (60% confidence) (UNUSED)
++
+ #### code-quality-checker-streamlit.py
+ - Line 80: unused function 'parse_pylint' (60% confidence) (UNUSED)
+ - Line 98: unused function 'parse_mypy' (60% confidence) (UNUSED)
+@@ -9717,6 +9859,83 @@ Finds unused UI elements or logic blocks (but may flag false positives due to St
+ - Line 134: unused function 'parse_flake8' (60% confidence) (UNUSED)
+ - Line 152: unused function 'parse_vulture' (60% confidence) (UNUSED)
+ 
++#### embed_google_form_tab.py
++- Line 7: unused variable 'tab1' (60% confidence) (UNUSED)
++- Line 7: unused variable 'tab2' (60% confidence) (UNUSED)
++- Line 7: unused variable 'tab3' (60% confidence) (UNUSED)
++- Line 7: unused variable 'tab4' (60% confidence) (UNUSED)
++- Line 7: unused variable 'tab5' (60% confidence) (UNUSED)
++
++#### app.py
++- Line 11: unused import 'apply_global_styles' (90% confidence) (UNUSED)
++
++#### claude_style.py
++- Line 3: unused function 'apply_claude_style' (60% confidence) (UNUSED)
++
++#### css_utils.py
++- Line 13: unused function 'apply_custom_styles' (60% confidence) (UNUSED)
++
++#### global_styles.py
++- Line 3: unused function 'apply_global_styles' (60% confidence) (UNUSED)
++
++#### motion_header.py
++- Line 3: unused function 'render_motion_header' (60% confidence) (UNUSED)
++
++#### motion_summary_tab.py
++- Line 3: unused import 'render_motion_header' (90% confidence) (UNUSED)
++
++#### themes.py
++- Line 225: unused function 'render_theme_selector' (60% confidence) (UNUSED)
++- Line 237: unused function 'apply_theme' (60% confidence) (UNUSED)
++
++#### legal_logic_enhanced.py
++- Line 20: unused variable 'REASON_NO_NOTICE' (60% confidence) (UNUSED)
++- Line 29: unused variable 'STATUS_INCOMPLETE' (60% confidence) (UNUSED)
++
++#### legal_logic_enhanced.py
++- Line 20: unused variable 'REASON_NO_NOTICE' (60% confidence) (UNUSED)
++- Line 29: unused variable 'STATUS_INCOMPLETE' (60% confidence) (UNUSED)
++
++#### streamlit-analyzer-fixed.py
++- Line 87: unused function 'parse_pylint' (60% confidence) (UNUSED)
++- Line 105: unused function 'parse_mypy' (60% confidence) (UNUSED)
++- Line 123: unused function 'parse_bandit' (60% confidence) (UNUSED)
++- Line 141: unused function 'parse_flake8' (60% confidence) (UNUSED)
++- Line 159: unused function 'parse_vulture' (60% confidence) (UNUSED)
++
++#### streamlit_app.py
++- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
++- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
++- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
++
++#### streamlit_app_backup-2.py
++- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
++- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
++- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
++
++#### streamlit_app_backup-3.py
++- Line 7: unused import 'save_summary' (90% confidence) (UNUSED)
++- Line 70: unused attribute 'motion_generator' (60% confidence) (UNUSED)
++- Line 89: unused attribute 'pdf_download_count' (60% confidence) (UNUSED)
++
++#### summary_generator.py
++- Line 82: unused function 'save_summary' (60% confidence) (UNUSED)
++
++#### enhanced-legal-logic-tests.py
++- Line 8: unused import 'pytest_html' (90% confidence) (UNUSED)
++- Line 267: unused function 'generate_test_report' (60% confidence) (UNUSED)
++
++#### forms.py
++- Line 6: unused function 'render_intake_form' (60% confidence) (UNUSED)
++
++#### logging.py
++- Line 7: unused function 'log_event' (60% confidence) (UNUSED)
++- Line 17: unused function 'show_debug_panel' (60% confidence) (UNUSED)
++
++#### session.py
++- Line 10: unused function 'init_session_state' (60% confidence) (UNUSED)
++- Line 25: unused function 'validate_session_state' (60% confidence) (UNUSED)
++
+ ### flake8 (✅ Helps with readability)
+ Keeps formatting, line breaks, and indentations clean
+ 
+diff --git a/streamlit_app.py b/streamlit_app.py
+index b402228..ac2efcd 100644
+--- a/streamlit_app.py
++++ b/streamlit_app.py
+@@ -1,232 +1,4 @@
+-import streamlit as st
+-from openai import OpenAI
+-import yaml
+-from typing import Dict, Any, List
+-from legal_logic import evaluate_rules
+-from response_logic import explain_output
+-import sys
+-from summary_generator import generate_summary, save_summary
+-from motion_drafter import render_motion_template
+-from datetime import datetime
++from grizly_app.app import main
+ 
+-# Feature toggle for motion draft generation
+-ENABLE_MOTION_GENERATOR = True
+-
+-# Initialize OpenAI client with caching
+-@st.cache_resource
+-def get_openai_client(api_key: str) -> OpenAI:
+-    """Initialize and cache the OpenAI client."""
+-    return OpenAI(api_key=api_key)
+-
+-# Cache the legal evaluation function
+-@st.cache_data
+-def cached_evaluate_rules(facts: Dict[str, Any]) -> Dict[str, Any]:
+-    """Cache the legal evaluation results."""
+-    return evaluate_rules(facts)
+-
+-# Cache the GPT explanation generation
+-@st.cache_data
+-def cached_explain_output(result: Dict[str, Any]) -> str:
+-    """Cache the GPT explanation."""
+-    return explain_output(result)
+-
+-# Load and cache intake questions
+-@st.cache_data
+-def load_questions() -> List[Dict[str, Any]]:
+-    """Load and cache intake questions."""
+-    with open("intake_questions.yaml", "r") as f:
+-        return yaml.safe_load(f)["questions"]
+-
+-# Show title and description.
+-st.markdown("""
+-## 🏠 GrizlyUDVacator – Tenant Relief Triage Chatbot
+-
+-Welcome to **GrizlyUDVacator**, a symbolic AI-powered assistant designed to help tenants—and the legal professionals who support them—analyze and challenge default judgments in **unlawful detainer (eviction)** cases under **California Code of Civil Procedure § 473.5**.
+-
+-This chatbot uses a combination of:
+-- 🧠 **Formal legal logic** (statutory rules + case law reasoning)
+-- 💬 **OpenAI’s GPT model** (for clear explanations and summaries)
+-- ⚖️ Designed for **legal aid clinics, pro bono teams, and tenants facing eviction**
+-
+-### 🔐 Getting Started
+-To run the chatbot, please provide your **OpenAI API key** below. This is required to generate natural language explanations based on your intake.
+-
+----
+-
+-### 📁 Project Repository
+-[![GitHub](https://img.shields.io/badge/View_on-GitHub-24292e?logo=github&logoColor=white)](https://github.com/jurisgpt/GrizlyUDVacator-CaseIntake)
+-
+-**Version:** `v1.0.0-beta`
+-🔐 Mode: `Legal Aid Staff`
+-
+-> Don’t worry — your data is not shared or stored, and everything runs locally in your browser.
+-
+----
+-""")
+-
+-questions = load_questions()
+-
+-form_inputs: Dict[str, Any] = {}
+-
+-with st.form("ud_intake_form"):
+-    st.subheader("📝 Intake Form – Tell us what happened")
+-    
+-    for q in questions:
+-        if q["type"] == "date":
+-            date_val = st.date_input(q["text"])
+-            form_inputs[q["id"]] = str(date_val) if date_val else None
+-        elif q["type"] == "bool":
+-            form_inputs[q["id"]] = st.checkbox(q["text"])
+-
+-    submitted = st.form_submit_button("Evaluate Legal Relief")
+-
+-# Initialize session state for motion generator
+-if "motion_generator" not in st.session_state:
+-    st.session_state.motion_generator = {
+-        "enabled": False,
+-        "show": False,
+-        "motion_text": ""
+-    }
+-
+-# Initialize variables to prevent NameError
+-facts = None
+-result = None
+-explanation = None
+-
+-if submitted:
+-    # Create facts and result
+-    facts = {
+-        "served_date": str(form_inputs["served_date"]),
+-        "motion_date": str(form_inputs["motion_date"]),
+-        "participated": form_inputs["participated"],
+-        "actual_notice": form_inputs["actual_notice"],
+-        "relied_on_bad_advice": form_inputs["relied_on_bad_advice"]
+-    }
+-
+-    result = cached_evaluate_rules(facts)
+-    explanation = cached_explain_output(result)
+-
+-    # Store form submission state
+-    st.session_state.submitted = True
+-    st.session_state.facts = facts
+-    st.session_state.result = result
+-    st.session_state.explanation = explanation
+-
+-    # Only show motion generator if form was submitted and we have valid data
+-    if submitted and facts and result and explanation:
+-        st.markdown("### ✅ Evaluation Result")
+-        st.success(f"**Status:** {result['status'].replace('_', ' ').title()}")
+-        st.info(f"**Reason:** {result['reason']}")
+-        st.code(f"Rules Applied: {', '.join(result['rules_applied'])}")
+-
+-        # Show GPT explanation
+-        st.markdown("### 🧠 GPT Explanation")
+-        st.write(explanation)
+-
+-        # Generate and save case summary
+-        summary_text = generate_summary(facts, result, explanation)
+-        st.session_state['summary_text'] = summary_text
+-        save_summary(summary_text)
+-
+-# Show motion generator after successful submission
+-if ENABLE_MOTION_GENERATOR and st.session_state.get("submitted"):
+-    st.markdown("### 📝 Optional: Draft Motion to Vacate")
+-
+-    show_motion_generator = st.checkbox(
+-        "Generate motion draft",
+-        key="checkbox_motion"
+-    )
+-
+-    if show_motion_generator:
+-        st.info("🧪 Debug: Checkbox triggered — generating draft...")
+-
+-        try:
+-            # Validate required keys exist
+-            assert "facts" in st.session_state, "Facts missing from session"
+-            assert "result" in st.session_state, "Result missing from session"
+-            assert "explanation" in st.session_state, "Explanation missing from session"
+-
+-            from motion_drafter import render_motion_template
+-
+-            motion_text = render_motion_template(
+-                st.session_state["facts"],
+-                st.session_state["result"],
+-                st.session_state["explanation"]
+-            )
+-
+-            st.text_area("Generated Motion (Editable)", value=motion_text, height=300)
+-
+-            st.download_button(
+-                label="📥 Download Draft Motion (.txt)",
+-                data=motion_text,
+-                file_name="motion_to_vacate.txt",
+-                mime="text/plain"
+-            )
+-
+-        except AssertionError as e:
+-            st.error(f"⚠️ Missing required session key: {e}")
+-        except Exception as e:
+-            st.exception(e)
+-
+-    # Add developer debug panel
+-    with st.expander("🧪 Developer Debug Panel"):
+-        st.markdown("### Session State:")
+-        st.json(st.session_state)
+-
+-    # Add download button for case summary
+-    if "summary_text" in st.session_state:
+-        st.download_button(
+-            label="📥 Download Case Summary",
+-            data=st.session_state["summary_text"],
+-            file_name="case-summary.txt",
+-            mime="text/plain"
+-        )
+-
+-
+-
+-try:
+-    # Get API key from secrets
+-    openai_api_key = st.secrets["openai"]["api_key"]
+-    if not openai_api_key:
+-        st.error("Please add your OpenAI API key in .streamlit/secrets.toml")
+-        st.stop()
+-    
+-    # Get cached OpenAI client
+-    client = get_openai_client(openai_api_key)
+-    
+-    # Create a session state variable to store the chat messages. This ensures that the
+-    # messages persist across reruns.
+-    if "messages" not in st.session_state:
+-        st.session_state.messages = []
+-
+-    # Display the existing chat messages via `st.chat_message`.
+-    for message in st.session_state.messages:
+-        with st.chat_message(message["role"]):
+-            st.markdown(message["content"])
+-
+-    # Create a chat input field to allow the user to enter a message. This will display
+-    # automatically at the bottom of the page.
+-    if prompt := st.chat_input("What is up?"):
+-
+-        # Store and display the current prompt.
+-        st.session_state.messages.append({"role": "user", "content": prompt})
+-        with st.chat_message("user"):
+-            st.markdown(prompt)
+-
+-        # Generate a response using the OpenAI API.
+-        stream = client.chat.completions.create(
+-            model="gpt-3.5-turbo",
+-            messages=[
+-                {"role": m["role"], "content": m["content"]}
+-                for m in st.session_state.messages
+-            ],
+-            stream=True,
+-        )
+-
+-        # Stream the response to the chat using `st.write_stream`, then store it in 
+-        # session state.
+-        with st.chat_message("assistant"):
+-            response = st.write_stream(stream)
+-        st.session_state.messages.append({"role": "assistant", "content": response})
+-except KeyError:
+-    st.error("Please add your OpenAI API key in .streamlit/secrets.toml")
++if __name__ == "__main__":
++    main()
+diff --git a/summary_generator.py b/summary_generator.py
+deleted file mode 100644
+index 4504970..0000000
+--- a/summary_generator.py
++++ /dev/null
+@@ -1,93 +0,0 @@
+-# summary_generator.py
+-
+-"""
+-This module generates a professional, plain text case summary that includes:
+-✅ User inputs (facts)
+-✅ Legal rule result
+-✅ GPT-generated explanation
+-The summary is saved to a file: case-summary.txt
+-The user can also download it via Streamlit's download button.
+-
+-📌 Disclaimer: This tool is for research and educational use only. It is not legal advice.
+-"""
+-
+-import datetime
+-from typing import Dict, Any, Optional
+-
+-def generate_summary(facts: Dict[str, Any], result: Dict[str, Any], explanation: Optional[str], case_name: str = "Tenant vs. Landlord") -> str:
+-    """
+-    Create a formatted case summary string.
+-
+-    Args:
+-        facts (dict): Input data from the form (served_date, motion_date, etc.)
+-        result (dict): Output from evaluate_rules()
+-        explanation (str): GPT explanation of legal result
+-        case_name (str): Optional case name or placeholder
+-
+-    Returns:
+-        str: Formatted summary text
+-    """
+-
+-    now = datetime.datetime.now()
+-    timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
+-
+-    # Initialize values with defaults
+-    served_date = facts.get("served_date", "")
+-    motion_date = facts.get("motion_date", "")
+-    status = result.get("status", "")
+-    reason = result.get("reason", "")
+-    rules_applied = result.get("rules_applied", [])
+-    
+-    summary = f"""\
+-============================================================
+-🏠 GrizlyUDVacator: Case Summary
+-============================================================
+-
+-📅 Timestamp: {timestamp}
+-📁 Case: {case_name}
+-
+-------------------------------------------------------------
+-🔍 User-Provided Facts
+-------------------------------------------------------------
+-- Date Served:         {served_date}
+-- Motion Filed:        {motion_date}
+-- Participated:        {"Yes" if facts.get("participated") else "No"}
+-- Actual Notice:       {"Yes" if facts.get("actual_notice") else "No"}
+-- Bad Legal Advice:    {"Yes" if facts.get("relied_on_bad_advice") else "No"}
+-
+-------------------------------------------------------------
+-⚖️ Legal Rule Evaluation (CCP § 473.5)
+-------------------------------------------------------------
+-- Outcome:             {status.replace("_", " ").title() or "N/A"}
+-- Reason:              {reason or "N/A"}
+-- Rules Applied:       {', '.join(rules_applied) or "N/A"}
+-
+-------------------------------------------------------------
+-🧠 GPT Explanation
+-------------------------------------------------------------
+-{explanation or "No explanation available"}
+-
+-------------------------------------------------------------
+-📢 Disclaimer
+-------------------------------------------------------------
+-This tool is for research and educational use only.
+-It does not constitute legal advice or attorney-client relationship.
+-
+-============================================================
+-"""
+-
+-    return summary
+-
+-
+-def save_summary(summary: str, filename: str = "case-summary.txt") -> None:
+-    """
+-    Save the summary text to a local file for backend use.
+-
+-    Args:
+-        summary (str): Case summary text
+-        filename (str): Output file name
+-    """
+-    with open(filename, "w") as f:
+-        f.write(summary)
+-
+-

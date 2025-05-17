@@ -12,7 +12,8 @@ The user can also download it via Streamlit's download button.
 """
 
 import datetime
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
+
 
 def generate_summary(facts: Dict[str, Any], result: Dict[str, Any], explanation: Optional[str], case_name: str = "Tenant vs. Landlord") -> str:
     """
