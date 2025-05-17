@@ -1,6 +1,6 @@
 # 🏠 GrizlyUDVacator – Tenant Relief Triage Chatbot
 
-A symbolic AI-powered assistant designed to help tenants and legal professionals analyze and challenge default judgments in unlawful detainer (eviction) cases under California Code of Civil Procedure § 473.5.
+A symbolic AI-powered case triage assistant designed to help community based legal aid professionals analyze default judgments in unlawful detainer (eviction) cases under California Code of Civil Procedure § 473.5.
 
 ## 🚀 Features
 
