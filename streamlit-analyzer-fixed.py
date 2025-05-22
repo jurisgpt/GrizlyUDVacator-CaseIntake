@@ -11,12 +11,14 @@ Fixed version that avoids multiprocessing pickling issues.
 import os
 import sys
 import subprocess
-import argparse
+# import argparse # No longer directly used for parser creation here
 import json
 import time
 from datetime import datetime
 from typing import Dict, List, Any, Tuple, Optional
 import concurrent.futures
+
+from analysis_utils import parse_common_script_args, discover_python_files, is_path_ignored, DEFAULT_IGNORE_DIRS, DEFAULT_IGNORE_FILES # Import discover_python_files and is_path_ignored
 
 # ANSI color codes for terminal output
 COLORS = {
@@ -337,6 +339,127 @@ def generate_text_report(results: Dict[str, List[Dict[str, Any]]], raw_outputs: 
     
     return "\n".join(report)
 
+def generate_markdown_report(results: Dict[str, List[Dict[str, Any]]], 
+                             execution_times: Dict[str, float]) -> str:
+    """Generate a Markdown report from all tool results"""
+    report = []
+    
+    # Add header
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    report.append("# Streamlit Static Analysis Report")
+    report.append(f"Generated: {timestamp}\n")
+    
+    # Add tool overview
+    report.append("## Tools Summary")
+    for tool_name, tool_config in TOOLS.items():
+        tool_ran = tool_name in results and results[tool_name] is not None # Check if results exist for the tool
+        exec_time_str = f" ({execution_times.get(tool_name, 0):.2f}s)" if tool_name in execution_times else ""
+        
+        # Determine status message
+        status_message = ""
+        if tool_name in execution_times and execution_times[tool_name] is not None: # Tool was attempted
+            if tool_ran and results[tool_name]:
+                issue_count = len(results[tool_name])
+                status_message = f"{issue_count} issues found"
+            elif tool_ran and not results[tool_name]: # Ran successfully, no issues
+                 status_message = "No issues found"
+            else: # Attempted but failed to produce results (e.g. not installed, error during run)
+                status_message = "✗ Failed to run or no output"
+        else: # Tool was not selected to run or not even attempted
+            status_message = "Not run"
+            
+        report.append(f"- **{tool_name}** ({tool_config['importance']}): {status_message}{exec_time_str}")
+    report.append("")
+    
+    # Add Streamlit-specific issues section
+    streamlit_issues_list = []
+    for tool_name, issues_list in results.items():
+        if issues_list is None: continue # Skip if tool failed to produce results
+        for issue in issues_list:
+            if is_streamlit_related(issue):
+                streamlit_issues_list.append({
+                    "tool": tool_name,
+                    **issue
+                })
+    
+    if streamlit_issues_list:
+        report.append("## 🔥 Streamlit-Specific Issues")
+        for issue in streamlit_issues_list:
+            file_loc = f"{issue['file']}:{issue['line']}"
+            report.append(f"- **{issue['tool']}** ({file_loc}): {issue['message']}")
+        report.append("")
+    
+    # Add detailed results for each tool
+    report.append("## Detailed Results")
+    
+    sorted_tool_names = sorted(
+        TOOLS.keys(),
+        # Sort by: 1. Not attempted/failed early, 2. Attempted but no issues, 3. Attempted with issues, then alphabetically
+        key=lambda t: (t not in execution_times, t not in results or not results.get(t), t)
+    )
+
+    for tool_name in sorted_tool_names:
+        tool_config = TOOLS[tool_name]
+        report.append(f"### {tool_name} ({tool_config['importance']})")
+        report.append(f"*{tool_config['description']}*")
+        
+        if tool_name not in execution_times: # Tool was not even attempted
+            report.append("\n*Tool not selected to run.*\n")
+            continue
+        if tool_name not in results or results[tool_name] is None: # Tool attempted but failed or no output
+            report.append("\n*Tool did not produce results (e.g., not installed, error during execution, or timed out).*\n")
+            continue
+        if not results[tool_name]: # Tool ran successfully, no issues found
+            report.append("\n*No issues found.*\n")
+            continue
+            
+        report.append("")
+        
+        issues = results[tool_name]
+        files = {}
+        for issue in issues:
+            file_path = issue.get("file", "unknown_file")
+            if file_path.startswith("./"):
+                file_path = file_path[2:]
+            if file_path not in files:
+                files[file_path] = []
+            files[file_path].append(issue)
+        
+        for file_path, file_issues in sorted(files.items()):
+            # Using os.path.basename for cleaner display, assuming file_path is a valid path string
+            report.append(f"#### `{os.path.basename(file_path)}`") 
+            for issue in sorted(file_issues, key=lambda x: x.get("line", 0)):
+                line_num = issue.get("line", 0)
+                code = issue.get("code", "")
+                message = issue.get("message", "")
+                severity = issue.get("severity", "").upper()
+                severity_marker = ""
+                if severity == "ERROR" or "HIGH" in severity:
+                    severity_marker = "🔴 "
+                elif severity == "WARNING" or "MEDIUM" in severity:
+                    severity_marker = "🟡 "
+                elif "LOW" in severity or severity == "STYLE" or severity == "CONVENTION" or severity == "REFACTOR":
+                    severity_marker = "🟢 "
+                elif severity == "UNUSED":
+                    severity_marker = "⚪ "
+
+
+                code_str = f" `{code}`" if code else ""
+                report.append(f"- Line {line_num}:{code_str} {severity_marker}{message} *({severity.lower()})*")
+            report.append("")
+    
+    # Add recommendations section
+    report.append("## Recommendations")
+    report.append("Based on the analysis, consider these Streamlit-specific best practices:")
+    report.append("")
+    report.append("1. **Widget Duplication**: Always use unique `key` parameters for interactive elements.")
+    report.append("2. **State Management**: Properly initialize `session_state` variables before use.")
+    report.append("3. **Form Handling**: Keep form widgets and submission handling together.")
+    report.append("4. **Execution Flow**: Remember Streamlit reruns the entire script on each interaction.")
+    report.append("5. **Type Safety**: Add type hints to improve readability and catch errors early.")
+    
+    return "\n".join(report)
+
 def save_report(report: str, output_path: str) -> None:
     """Save the report to a file with UTF-8 encoding"""
     try:
@@ -348,13 +471,10 @@ def save_report(report: str, output_path: str) -> None:
 
 def main():
     """Main function"""
-    parser = argparse.ArgumentParser(
-        description="Streamlit Static Analysis Tool"
-    )
-    parser.add_argument(
-        "project_path", 
-        help="Path to the Streamlit project to analyze"
-    )
+    # Use the common argument parser
+    parser = parse_common_script_args("Streamlit Static Analysis Tool")
+
+    # Add script-specific arguments
     parser.add_argument(
         "--output", "-o",
         default="Code-Quality-Report.txt",
@@ -375,12 +495,17 @@ def main():
         action="store_true",
         help="Run tools sequentially instead of in parallel"
     )
+    parser.add_argument(
+        "--markdown_output",
+        default=None,
+        help="Output path for the Markdown report (e.g., report.md). If not provided, no Markdown report is generated."
+    )
     
     args = parser.parse_args()
     
     # Check if project path exists
     if not os.path.exists(args.project_path):
-        print(f"{COLORS['RED']}Error: Project path does not exist: {args.project_path}{COLORS['ENDC']}")
+        print(f"{COLORS['RED']}Error: Project path '{args.project_path}' does not exist.{COLORS['ENDC']}")
         sys.exit(1)
     
     # Determine which tools to run
@@ -407,20 +532,28 @@ def main():
                 print(f"{COLORS['YELLOW']}Warning: Unknown tool: {tool_name}{COLORS['ENDC']}")
                 continue
                 
+            # For streamlit-analyzer-fixed, we pass the project_path directly to tools
+            # The discover_python_files and is_path_ignored are not directly used here for filtering
+            # files before passing to tools like pylint, mypy etc. as these tools handle
+            # path recursion and some have their own ignore mechanisms.
+            # However, the project_path from common args is used.
             name, issues, success, raw_output, exec_time = run_tool(tool_name, args.project_path)
-            if success:
+            if success: # Tool ran and parsed successfully
                 results[name] = issues
+            # Store raw_output only if the tool was attempted, regardless of success in parsing
+            # This helps in debugging or seeing partial output for failed tools.
+            if raw_output is not None: 
                 raw_outputs[name] = raw_output
-            elif raw_output:
-                raw_outputs[name] = raw_output
-                
+            else: # Ensure there's a placeholder if raw_output was None (e.g. tool not found)
+                raw_outputs[name] = f"Tool {tool_name} did not produce any output or failed to run."
+
             execution_times[name] = exec_time
     else:
-        # Parallel execution using ThreadPoolExecutor (safe, no pickling issues)
-        # We use threads instead of processes to avoid pickling issues
+        # Parallel execution using ThreadPoolExecutor
         print(f"{COLORS['BLUE']}Running {len(tools_to_run)} tools in parallel...{COLORS['ENDC']}")
         
         with concurrent.futures.ThreadPoolExecutor() as executor:
+            # As above, project_path is passed directly.
             future_to_tool = {
                 executor.submit(run_tool, tool_name, args.project_path): tool_name 
                 for tool_name in tools_to_run if tool_name in TOOLS
@@ -428,11 +561,13 @@ def main():
             
             for future in concurrent.futures.as_completed(future_to_tool):
                 name, issues, success, raw_output, exec_time = future.result()
-                if success:
+                if success: # Tool ran and parsed successfully
                     results[name] = issues
+                # Store raw_output if available
+                if raw_output is not None:
                     raw_outputs[name] = raw_output
-                elif raw_output:
-                    raw_outputs[name] = raw_output
+                else:
+                    raw_outputs[name] = f"Tool {name} did not produce any output or failed to run."
                     
                 execution_times[name] = exec_time
     
@@ -455,6 +590,16 @@ def main():
     print(f"- Streamlit-specific issues: {streamlit_issues}")
     print(f"- Report saved to: {args.output}")
     print(f"- Total execution time: {total_time:.2f} seconds")
+
+    # Generate and save Markdown report if requested
+    if args.markdown_output:
+        # Ensure all tools attempted have a placeholder in results if they failed, for consistent reporting
+        # The run_tool function already returns raw_output for failed tools, which isn't directly used here
+        # but execution_times tracks all attempted tools.
+        # The generate_markdown_report function now handles cases where results[tool_name] might be None or missing.
+        markdown_report = generate_markdown_report(results, execution_times)
+        save_report(markdown_report, args.markdown_output)
+        # print(f"{COLORS['GREEN']}Markdown report saved to: {args.markdown_output}{COLORS['ENDC']}") # Already printed by save_report
 
 if __name__ == "__main__":
     main()
