@@ -13,9 +13,17 @@ import sys
 import importlib.util
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple, Any, Optional
-import argparse
+# import argparse # No longer directly used for parser creation here
 import logging
-import json
+# import json # Not used directly anymore, ast.unparse might be an alternative if needed for specific values
+
+from analysis_utils import (
+    parse_common_script_args,
+    discover_python_files,
+    is_path_ignored,
+    DEFAULT_IGNORE_DIRS, # Using the default from analysis_utils
+    DEFAULT_IGNORE_FILES # Using the default from analysis_utils
+)
 
 # Configure logging
 logging.basicConfig(
@@ -173,26 +181,26 @@ class StreamlitComponentExtractor(ast.NodeVisitor):
 class DocumentationGenerator:
     """Generate Markdown documentation from analyzed project files."""
     
-    def __init__(self, project_path: str, output_file: str, ignore_dirs: List[str] = None):
+    def __init__(self, project_path: str, output_file: str, ignore_dirs_list: List[str], ignore_files_list: List[str]):
         """
         Initialize the documentation generator.
         
         Args:
             project_path: Root directory of the Streamlit project
             output_file: Path where the documentation will be written
-            ignore_dirs: List of directory names to ignore
+            ignore_dirs_list: List of directory names/patterns to ignore
+            ignore_files_list: List of file names/patterns to ignore
         """
         self.project_path = os.path.abspath(project_path)
         self.output_file = output_file
-        self.ignore_dirs = ignore_dirs or ['.git', '.github', '__pycache__', '.venv', 'venv', 'env', 'node_modules']
+        # Convert lists to sets for efficient lookup in is_path_ignored
+        self.ignore_dirs_set = set(ignore_dirs_list) if ignore_dirs_list else set(DEFAULT_IGNORE_DIRS)
+        self.ignore_files_set = set(ignore_files_list) if ignore_files_list else set(DEFAULT_IGNORE_FILES)
         self.files_data = {}
-        self.project_structure = {}
+        self.project_structure = {} # For directory structure visualization
         self.requirements = set()
     
-    def _is_ignored(self, path: str) -> bool:
-        """Check if a path should be ignored."""
-        path_parts = path.split(os.sep)
-        return any(part in self.ignore_dirs for part in path_parts)
+    # _is_ignored is now replaced by the utility function is_path_ignored from analysis_utils.py
     
     def _extract_file_info(self, file_path: str) -> Dict:
         """Extract information from a file based on its extension."""
@@ -305,45 +313,65 @@ class DocumentationGenerator:
     def collect_project_info(self) -> None:
         """Walk through the project and collect information about all files."""
         logger.info(f"Analyzing project at {self.project_path}...")
-        
-        for root, dirs, files in os.walk(self.project_path):
-            # Skip ignored directories
-            dirs[:] = [d for d in dirs if d not in self.ignore_dirs]
-            
-            rel_path = os.path.relpath(root, self.project_path)
-            if rel_path == '.':
-                rel_path = ''
-            
-            # Initialize this directory in the structure
-            current_level = self.project_structure
-            if rel_path:
-                for part in rel_path.split(os.sep):
-                    if part not in current_level:
-                        current_level[part] = {}
-                    current_level = current_level[part]
-            
-            # Process files in this directory
+
+        # Use discover_python_files for Python files
+        python_files_to_analyze = discover_python_files(
+            self.project_path, self.ignore_dirs_set, self.ignore_files_set
+        )
+
+        all_files_in_project = []
+        for root, _, files in os.walk(self.project_path, topdown=True):
+            # Filter out ignored directories from os.walk itself
+            # dirs[:] = [d for d in dirs if not is_path_ignored(os.path.join(root, d), self.ignore_dirs_set, self.ignore_files_set)]
+            # The above line was removed because discover_python_files already handles this for .py files.
+            # For non-Python files, we will check them individually.
             for file in files:
-                file_path = os.path.join(root, file)
-                rel_file_path = os.path.relpath(file_path, self.project_path)
-                
-                # Skip files in ignored directories
-                if self._is_ignored(rel_file_path):
-                    continue
-                
-                logger.info(f"Processing {rel_file_path}")
-                
-                # Extract information from the file
-                file_info = self._extract_file_info(file_path)
-                
-                # Store the information
-                self.files_data[rel_file_path] = {
-                    'path': rel_file_path,
-                    'info': file_info
-                }
-                
-                # Add to project structure
-                current_level[file] = "file"
+                all_files_in_project.append(os.path.join(root, file))
+        
+        # Build project structure for visualization (including non-Python files)
+        # And process requirements.txt, README.md specifically
+        for abs_file_path in all_files_in_project:
+            if is_path_ignored(abs_file_path, self.ignore_dirs_set, self.ignore_files_set):
+                continue # Skip explicitly ignored files/dirs
+
+            rel_file_path = os.path.relpath(abs_file_path, self.project_path)
+            
+            # Update project_structure for visualization
+            path_parts = rel_file_path.split(os.sep)
+            current_level = self.project_structure
+            for part in path_parts[:-1]: # Iterate through directory parts
+                if part not in current_level:
+                    current_level[part] = {}
+                current_level = current_level[part]
+            current_level[path_parts[-1]] = "file" # Mark the file
+
+            # Process specific non-Python files like requirements.txt, README.md
+            if os.path.basename(abs_file_path).lower() == 'requirements.txt' or \
+               os.path.basename(abs_file_path).lower() == 'readme.md':
+                if rel_file_path not in self.files_data: # Avoid reprocessing if somehow already added
+                    logger.info(f"Processing special file: {rel_file_path}")
+                    file_info = self._extract_file_info(abs_file_path)
+                    self.files_data[rel_file_path] = {'path': rel_file_path, 'info': file_info}
+            # Python files are handled next using the pre-filtered list
+        
+        # Process Python files discovered by the utility function
+        for abs_py_file_path in python_files_to_analyze:
+            rel_py_file_path = os.path.relpath(abs_py_file_path, self.project_path)
+            if rel_py_file_path in self.files_data: # Already processed (e.g. if project_path was a single file)
+                continue
+
+            logger.info(f"Processing Python file: {rel_py_file_path}")
+            file_info = self._extract_python_file_info(abs_py_file_path) # _extract_python_file_info expects absolute path
+            self.files_data[rel_py_file_path] = {
+                'path': rel_py_file_path,
+                'info': file_info
+            }
+            # Project structure for Python files is also handled by the all_files_in_project loop
+
+        if not self.files_data:
+            logger.warning(f"No files processed. Check project_path and ignore patterns. Project path: {self.project_path}")
+            if os.path.isfile(self.project_path) and not self.project_path.endswith(".py"):
+                 logger.warning("If project_path is a single file, it must be a Python file to be processed by discover_python_files.")
     
     def _generate_project_structure_md(self) -> str:
         """Generate Markdown representation of the project structure."""
@@ -589,31 +617,42 @@ class DocumentationGenerator:
 
 def main():
     """Main entry point for the documentation generator."""
-    parser = argparse.ArgumentParser(description='Generate technical documentation for a Streamlit project.')
-    parser.add_argument('project_path', help='Path to the Streamlit project root directory')
-    parser.add_argument('-o', '--output', default='technical_documentation.md',
-                        help='Output file path (default: technical_documentation.md)')
-    parser.add_argument('-i', '--ignore', nargs='+', default=None,
-                        help='Directories to ignore (in addition to defaults)')
-    parser.add_argument('-v', '--verbose', action='store_true',
-                        help='Enable verbose logging')
+    # Use the common argument parser from analysis_utils
+    parser = parse_common_script_args("Generate technical documentation for a Streamlit project.")
+    
+    # Add script-specific arguments for streamlit-doc-generator
+    parser.add_argument(
+        '-o', '--output', 
+        default='technical_documentation.md',
+        help='Output file path for the Markdown documentation (default: technical_documentation.md)'
+    )
+    parser.add_argument(
+        '-v', '--verbose', 
+        action='store_true',
+        help='Enable verbose logging'
+    )
+    # Note: --ignore-dirs and --ignore-files are already handled by parse_common_script_args
     
     args = parser.parse_args()
     
     # Set logging level
     if args.verbose:
         logger.setLevel(logging.DEBUG)
-    
-    # Combine default and custom ignored directories
-    ignore_dirs = ['.git', '.github', '__pycache__', '.venv', 'venv', 'env', 'node_modules']
-    if args.ignore:
-        ignore_dirs.extend(args.ignore)
-    
+    else:
+        logger.setLevel(logging.INFO)
+
+    # Check if project path exists
+    if not os.path.exists(args.project_path):
+        logger.error(f"Error: Project path '{args.project_path}' does not exist.")
+        sys.exit(1)
+        
     # Create and run documentation generator
+    # Pass the ignore_dirs and ignore_files from args to the constructor
     doc_generator = DocumentationGenerator(
         project_path=args.project_path,
         output_file=args.output,
-        ignore_dirs=ignore_dirs
+        ignore_dirs_list=args.ignore_dirs, # from common args
+        ignore_files_list=args.ignore_files # from common args
     )
     
     try:
