@@ -1,0 +1,838 @@
+************* Module legal_logic
+legal_logic/legal_logic.py:149:9: E0001: Parsing failed: 'unmatched '}' (legal_logic, line 149)' (syntax-error)
+************* Module streamlit-analyzer-m1
+streamlit-analyzer-m1.py:790:21: E0001: Parsing failed: 'invalid syntax (streamlit-analyzer-m1, line 790)' (syntax-error)
+************* Module grizly_app.app
+grizly_app/app.py:27:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/app.py:35:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/app.py:44:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/app.py:60:0: C0301: Line too long (118/100) (line-too-long)
+grizly_app/app.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/app.py:65:0: C0301: Line too long (126/100) (line-too-long)
+grizly_app/app.py:69:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/app.py:9:0: C0413: Import "import streamlit as st" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:11:0: C0413: Import "from grizly_app.ui.attachments_tab import render_attachments_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:12:0: C0413: Import "from grizly_app.ui.css_utils import reduce_top_padding" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:13:0: C0413: Import "from grizly_app.ui.decision_tree_tab import render_decision_tree_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:14:0: C0413: Import "from grizly_app.ui.external_form_tab import render_external_form_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:15:0: C0413: Import "from grizly_app.ui.footer import render_footer" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:16:0: C0413: Import "from grizly_app.ui.global_styles import apply_global_styles" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:17:0: C0413: Import "from grizly_app.ui.intake_form_tab import render_intake_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:18:0: C0413: Import "from grizly_app.ui.legal_reasoning_tab import render_reasoning_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:19:0: C0413: Import "from grizly_app.ui.monitoring_tab import show_log_dashboard" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:20:0: C0413: Import "from grizly_app.ui.motion_summary_tab import render_motion_tab" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:21:0: C0413: Import "from grizly_app.utils.logging import log_error, log_info" should be placed at the top of the module (wrong-import-position)
+grizly_app/app.py:103:19: W0718: Catching too general exception Exception (broad-exception-caught)
+grizly_app/app.py:72:4: W0612: Unused variable 'current_tab_index' (unused-variable)
+grizly_app/app.py:21:0: W0611: Unused log_error imported from grizly_app.utils.logging (unused-import)
+************* Module grizly_app.case_processor
+grizly_app/case_processor.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:22:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:24:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:33:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/case_processor.py:25:8: W0706: The except handler raises immediately (try-except-raise)
+grizly_app/case_processor.py:25:8: W0612: Unused variable 'e' (unused-variable)
+grizly_app/case_processor.py:48:16: W0719: Raising too general exception: Exception (broad-exception-raised)
+grizly_app/case_processor.py:54:12: W0719: Raising too general exception: Exception (broad-exception-raised)
+grizly_app/case_processor.py:59:8: C0415: Import outside toplevel (random) (import-outside-toplevel)
+grizly_app/case_processor.py:1:0: W0611: Unused import datetime (unused-import)
+************* Module grizly_app.legal_logic_aligned
+grizly_app/legal_logic_aligned.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/legal_logic_aligned.py:102:0: C0301: Line too long (119/100) (line-too-long)
+grizly_app/legal_logic_aligned.py:103:0: C0301: Line too long (142/100) (line-too-long)
+grizly_app/legal_logic_aligned.py:111:0: C0301: Line too long (124/100) (line-too-long)
+grizly_app/legal_logic_aligned.py:118:0: C0301: Line too long (148/100) (line-too-long)
+grizly_app/legal_logic_aligned.py:124:0: C0301: Line too long (130/100) (line-too-long)
+grizly_app/legal_logic_aligned.py:8:0: C0413: Import "from datetime import date, timedelta" should be placed at the top of the module (wrong-import-position)
+grizly_app/legal_logic_aligned.py:9:0: C0413: Import "from typing import Any, Dict, List" should be placed at the top of the module (wrong-import-position)
+grizly_app/legal_logic_aligned.py:10:0: C0413: Import "from grizly_app.utils.logging import log_info, log_error" should be placed at the top of the module (wrong-import-position)
+grizly_app/legal_logic_aligned.py:128:11: W0718: Catching too general exception Exception (broad-exception-caught)
+grizly_app/legal_logic_aligned.py:98:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+grizly_app/legal_logic_aligned.py:115:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+grizly_app/legal_logic_aligned.py:19:0: R0911: Too many return statements (10/6) (too-many-return-statements)
+grizly_app/legal_logic_aligned.py:2:0: W0611: Unused import logging (unused-import)
+grizly_app/legal_logic_aligned.py:8:0: W0611: Unused date imported from datetime (unused-import)
+grizly_app/legal_logic_aligned.py:8:0: W0611: Unused timedelta imported from datetime (unused-import)
+grizly_app/legal_logic_aligned.py:9:0: W0611: Unused List imported from typing (unused-import)
+************* Module grizly_app.motion_drafter
+grizly_app/motion_drafter.py:17:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/motion_drafter.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/motion_drafter.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/motion_drafter.py:71:0: C0301: Line too long (117/100) (line-too-long)
+************* Module grizly_app.summary_generator
+grizly_app/summary_generator.py:18:0: C0301: Line too long (143/100) (line-too-long)
+grizly_app/summary_generator.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
+grizly_app/summary_generator.py:94:0: C0305: Trailing newlines (trailing-newlines)
+grizly_app/summary_generator.py:91:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+************* Module streamlit_app
+streamlit_app.py:8:0: C0413: Import "from grizly_app.app import main" should be placed at the top of the module (wrong-import-position)
+************* Module code-quality-checker-streamlit
+code-quality-checker-streamlit.py:41:0: C0301: Line too long (119/100) (line-too-long)
+code-quality-checker-streamlit.py:48:0: C0301: Line too long (114/100) (line-too-long)
+code-quality-checker-streamlit.py:62:0: C0301: Line too long (125/100) (line-too-long)
+code-quality-checker-streamlit.py:177:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:179:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:183:16: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:184:32: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:185:22: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:189:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:195:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:199:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:212:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:217:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:225:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:235:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:243:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:248:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:251:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:255:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:257:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:265:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:274:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:278:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:283:0: C0301: Line too long (107/100) (line-too-long)
+code-quality-checker-streamlit.py:284:0: C0301: Line too long (102/100) (line-too-long)
+code-quality-checker-streamlit.py:286:0: C0301: Line too long (107/100) (line-too-long)
+code-quality-checker-streamlit.py:287:0: C0301: Line too long (101/100) (line-too-long)
+code-quality-checker-streamlit.py:288:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:316:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:318:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:321:0: C0301: Line too long (104/100) (line-too-long)
+code-quality-checker-streamlit.py:323:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:326:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:333:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:342:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:346:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:350:45: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:351:27: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:354:0: C0303: Trailing whitespace (trailing-whitespace)
+code-quality-checker-streamlit.py:362:0: C0305: Trailing newlines (trailing-newlines)
+code-quality-checker-streamlit.py:200:11: W0718: Catching too general exception Exception (broad-exception-caught)
+code-quality-checker-streamlit.py:209:0: R0914: Too many local variables (19/15) (too-many-locals)
+code-quality-checker-streamlit.py:293:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+************* Module css_audit
+css_audit.py:35:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:44:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:77:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:86:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:95:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:99:0: C0301: Line too long (112/100) (line-too-long)
+css_audit.py:103:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:110:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:116:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:123:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:127:0: C0301: Line too long (114/100) (line-too-long)
+css_audit.py:130:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:139:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:141:0: C0301: Line too long (126/100) (line-too-long)
+css_audit.py:146:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:159:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:169:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:178:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:186:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:192:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:196:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:202:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:210:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:232:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:259:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:264:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:271:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:275:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:279:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:285:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:296:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:298:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:301:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:309:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:312:76: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:314:75: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:316:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:318:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:321:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:324:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:328:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:336:0: C0301: Line too long (172/100) (line-too-long)
+css_audit.py:338:0: C0301: Line too long (134/100) (line-too-long)
+css_audit.py:339:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:342:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:345:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:350:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:355:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:360:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:365:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:377:0: C0303: Trailing whitespace (trailing-whitespace)
+css_audit.py:380:0: C0305: Trailing newlines (trailing-newlines)
+css_audit.py:11:0: E0401: Unable to import 'cssutils' (import-error)
+css_audit.py:14:0: E0401: Unable to import 'cssutils.css' (import-error)
+css_audit.py:15:0: E0401: Unable to import 'cssutils.css' (import-error)
+css_audit.py:16:0: E0401: Unable to import 'cssutils.css' (import-error)
+css_audit.py:70:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+css_audit.py:74:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+css_audit.py:75:20: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+css_audit.py:112:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+css_audit.py:113:20: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+css_audit.py:133:0: R0914: Too many local variables (22/15) (too-many-locals)
+css_audit.py:213:29: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+css_audit.py:251:0: C0413: Import "import subprocess" should be placed at the top of the module (wrong-import-position)
+css_audit.py:252:0: W0404: Reimport 'json' (imported line 4) (reimported)
+css_audit.py:252:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
+css_audit.py:253:0: C0413: Import "import tempfile" should be placed at the top of the module (wrong-import-position)
+css_audit.py:302:11: W0718: Catching too general exception Exception (broad-exception-caught)
+css_audit.py:266:21: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+css_audit.py:6:0: C0411: standard import "argparse" should be placed before third party import "requests" (wrong-import-order)
+css_audit.py:7:0: C0411: standard import "datetime" should be placed before third party import "requests" (wrong-import-order)
+css_audit.py:8:0: C0411: standard import "pathlib.Path" should be placed before third party import "requests" (wrong-import-order)
+css_audit.py:9:0: C0411: standard import "dataclasses.dataclass" should be placed before third party import "requests" (wrong-import-order)
+css_audit.py:10:0: C0411: standard import "typing.List" should be placed before third party import "requests" (wrong-import-order)
+css_audit.py:251:0: C0411: standard import "subprocess" should be placed before third party imports "requests", "cssutils", "cssutils.css.CSSStyleSheet", "cssutils.css.CSSStyleRule", "cssutils.css.CSSStyleDeclaration" (wrong-import-order)
+css_audit.py:252:0: C0411: standard import "json" should be placed before third party imports "requests", "cssutils", "cssutils.css.CSSStyleSheet", "cssutils.css.CSSStyleRule", "cssutils.css.CSSStyleDeclaration" (wrong-import-order)
+css_audit.py:253:0: C0411: standard import "tempfile" should be placed before third party imports "requests", "cssutils", "cssutils.css.CSSStyleSheet", "cssutils.css.CSSStyleRule", "cssutils.css.CSSStyleDeclaration" (wrong-import-order)
+css_audit.py:252:0: C0412: Imports from package json are not grouped (ungrouped-imports)
+css_audit.py:5:0: W0611: Unused import requests (unused-import)
+css_audit.py:10:0: W0611: Unused Optional imported from typing (unused-import)
+css_audit.py:14:0: W0611: Unused CSSStyleSheet imported from cssutils.css (unused-import)
+css_audit.py:15:0: W0611: Unused CSSStyleRule imported from cssutils.css (unused-import)
+css_audit.py:16:0: W0611: Unused CSSStyleDeclaration imported from cssutils.css (unused-import)
+************* Module embed_google_form_tab
+embed_google_form_tab.py:19:0: C0301: Line too long (118/100) (line-too-long)
+embed_google_form_tab.py:22:0: C0301: Line too long (128/100) (line-too-long)
+************* Module streamlit-analyzer-fixed
+streamlit-analyzer-fixed.py:38:0: C0301: Line too long (119/100) (line-too-long)
+streamlit-analyzer-fixed.py:47:0: C0301: Line too long (114/100) (line-too-long)
+streamlit-analyzer-fixed.py:65:0: C0301: Line too long (125/100) (line-too-long)
+streamlit-analyzer-fixed.py:180:0: C0301: Line too long (111/100) (line-too-long)
+streamlit-analyzer-fixed.py:186:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:188:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:193:16: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:194:32: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:195:22: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:200:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:213:0: C0301: Line too long (115/100) (line-too-long)
+streamlit-analyzer-fixed.py:215:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:217:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:222:0: C0301: Line too long (125/100) (line-too-long)
+streamlit-analyzer-fixed.py:223:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:231:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:234:0: C0301: Line too long (121/100) (line-too-long)
+streamlit-analyzer-fixed.py:236:0: C0301: Line too long (109/100) (line-too-long)
+streamlit-analyzer-fixed.py:237:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:239:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:242:0: C0301: Line too long (107/100) (line-too-long)
+streamlit-analyzer-fixed.py:243:0: C0301: Line too long (120/100) (line-too-long)
+streamlit-analyzer-fixed.py:244:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:255:95: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:259:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:266:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:274:0: C0301: Line too long (119/100) (line-too-long)
+streamlit-analyzer-fixed.py:278:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:288:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:296:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:300:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:304:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:308:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:320:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:323:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:325:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:332:0: C0301: Line too long (103/100) (line-too-long)
+streamlit-analyzer-fixed.py:335:0: C0301: Line too long (103/100) (line-too-long)
+streamlit-analyzer-fixed.py:337:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:378:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:380:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:383:0: C0301: Line too long (104/100) (line-too-long)
+streamlit-analyzer-fixed.py:385:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:388:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:393:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:398:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:400:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:404:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:409:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:416:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:422:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:425:82: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:428:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:436:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:438:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:440:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:444:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:448:45: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:449:27: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:452:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-analyzer-fixed.py:245:11: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-analyzer-fixed.py:212:15: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-analyzer-fixed.py:228:15: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-analyzer-fixed.py:255:0: R0914: Too many local variables (21/15) (too-many-locals)
+streamlit-analyzer-fixed.py:346:11: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-analyzer-fixed.py:349:0: R0914: Too many local variables (20/15) (too-many-locals)
+************* Module streamlit-doc-generator
+streamlit-doc-generator.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:48:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:78:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:85:0: C0301: Line too long (109/100) (line-too-long)
+streamlit-doc-generator.py:88:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:94:0: C0301: Line too long (141/100) (line-too-long)
+streamlit-doc-generator.py:97:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:105:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:111:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:114:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:117:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:121:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:125:0: C0301: Line too long (107/100) (line-too-long)
+streamlit-doc-generator.py:129:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:133:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:136:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:145:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:148:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:160:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:187:0: C0301: Line too long (116/100) (line-too-long)
+streamlit-doc-generator.py:191:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:196:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:200:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:204:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:208:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:212:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:220:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:226:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:229:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:232:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:236:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:252:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:271:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:282:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:288:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:292:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:304:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:308:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:312:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:316:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:324:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:329:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:333:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:335:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:338:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:344:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:347:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:351:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:361:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:364:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:369:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:374:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:391:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:398:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:401:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:410:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:418:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:421:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:424:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:430:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:434:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:443:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:449:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:452:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:462:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:464:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:472:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:475:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:477:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:481:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:493:79: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:497:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:500:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:503:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:508:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:516:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:519:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:521:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:523:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:527:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:536:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:546:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:550:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:556:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:562:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:565:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:567:76: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:569:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:572:0: C0301: Line too long (102/100) (line-too-long)
+streamlit-doc-generator.py:573:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:579:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:583:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:587:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:592:0: C0301: Line too long (109/100) (line-too-long)
+streamlit-doc-generator.py:600:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:602:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:606:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:611:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:618:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:626:0: C0303: Trailing whitespace (trailing-whitespace)
+streamlit-doc-generator.py:71:16: W0702: No exception type(s) specified (bare-except)
+streamlit-doc-generator.py:102:12: W0702: No exception type(s) specified (bare-except)
+streamlit-doc-generator.py:157:16: W0702: No exception type(s) specified (bare-except)
+streamlit-doc-generator.py:202:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+streamlit-doc-generator.py:246:15: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-doc-generator.py:247:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:276:15: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-doc-generator.py:277:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:298:15: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-doc-generator.py:299:12: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:307:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:334:16: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:365:4: R0914: Too many local variables (22/15) (too-many-locals)
+streamlit-doc-generator.py:588:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:623:11: W0718: Catching too general exception Exception (broad-exception-caught)
+streamlit-doc-generator.py:624:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+streamlit-doc-generator.py:13:0: W0611: Unused import importlib.util (unused-import)
+streamlit-doc-generator.py:15:0: W0611: Unused Set imported from typing (unused-import)
+streamlit-doc-generator.py:15:0: W0611: Unused Tuple imported from typing (unused-import)
+streamlit-doc-generator.py:15:0: W0611: Unused Any imported from typing (unused-import)
+streamlit-doc-generator.py:15:0: W0611: Unused Optional imported from typing (unused-import)
+streamlit-doc-generator.py:18:0: W0611: Unused import json (unused-import)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[70:177]
+==streamlit-analyzer-fixed:[77:183]
+    }
+}
+
+# Streamlit specific issue messages to highlight
+STREAMLIT_KEYWORDS = [
+    "st.", "streamlit", "session_state", "widget", "duplicate",
+    "key", "input", "form", "sidebar", "container"
+]
+
+def parse_pylint(output: str) -> List[Dict[str, Any]]:
+    """Parse pylint JSON output"""
+    try:
+        results = json.loads(output)
+        issues = []
+        for item in results:
+            issues.append({
+                "file": item.get("path", ""),
+                "line": item.get("line", 0),
+                "severity": item.get("type", ""),
+                "message": item.get("message", ""),
+                "code": item.get("symbol", "")
+            })
+        return issues
+    except json.JSONDecodeError:
+        # Handle case where pylint doesn't output valid JSON
+        return []
+
+def parse_mypy(output: str) -> List[Dict[str, Any]]:
+    """Parse mypy JSON output"""
+    try:
+        results = json.loads(output)
+        issues = []
+        if "data" in results and "errors" in results["data"]:
+            for error in results["data"]["errors"]:
+                issues.append({
+                    "file": error.get("file", ""),
+                    "line": error.get("line", 0),
+                    "severity": "error",
+                    "message": error.get("message", ""),
+                    "code": ""
+                })
+        return issues
+    except json.JSONDecodeError:
+        return []
+
+def parse_bandit(output: str) -> List[Dict[str, Any]]:
+    """Parse bandit JSON output"""
+    try:
+        results = json.loads(output)
+        issues = []
+        if "results" in results:
+            for result in results["results"]:
+                issues.append({
+                    "file": result.get("filename", ""),
+                    "line": result.get("line_number", 0),
+                    "severity": result.get("issue_severity", ""),
+                    "message": result.get("issue_text", ""),
+                    "code": result.get("test_id", "")
+                })
+        return issues
+    except json.JSONDecodeError:
+        return []
+
+def parse_flake8(output: str) -> List[Dict[str, Any]]:
+    """Parse flake8 JSON output"""
+    try:
+        results = json.loads(output)
+        issues = []
+        for file_path, file_errors in results.items():
+            for error in file_errors:
+                issues.append({
+                    "file": file_path,
+                    "line": error.get("line_number", 0),
+                    "severity": "style",
+                    "message": error.get("text", ""),
+                    "code": error.get("code", "")
+                })
+        return issues
+    except json.JSONDecodeError:
+        return []
+
+def parse_vulture(output: str) -> List[Dict[str, Any]]:
+    """Parse vulture text output"""
+    issues = []
+    for line in output.splitlines():
+        parts = line.split(":", 2)
+        if len(parts) >= 3:
+            file_path = parts[0]
+            try:
+                line_num = int(parts[1])
+                message = parts[2].strip()
+                issues.append({
+                    "file": file_path,
+                    "line": line_num,
+                    "severity": "unused",
+                    "message": message,
+                    "code": ""
+                })
+            except ValueError:
+                continue
+    return issues
+
+def run_tool(tool_name: str, target_path: str) -> Tuple[str, List[Dict[str, Any]], bool, Optional[str], float]:
+    """Run a tool and return name, parsed results, success status, raw output, and execution time"""
+    tool_config = TOOLS[tool_name]
+    cmd = [tool_config["cmd"]] + tool_config["args"] + [target_path] (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[24:41]
+==streamlit-analyzer-fixed:[21:38]
+COLORS = {
+    "HEADER": "\033[95m",
+    "BLUE": "\033[94m",
+    "GREEN": "\033[92m",
+    "YELLOW": "\033[93m",
+    "RED": "\033[91m",
+    "ENDC": "\033[0m",
+    "BOLD": "\033[1m",
+}
+
+# Tool configurations with importance ratings
+TOOLS = {
+    "pylint": {
+        "cmd": "pylint",
+        "args": ["--output-format=json"],
+        "importance": "🔥 Essential",
+        "description": "Detects misuse of widgets, naming issues, improper conditionals, repeated widget declarations", (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[344:359]
+==streamlit-analyzer-fixed:[442:456]
+    save_report(report, args.output)
+
+    # Print summary
+    total_issues = sum(len(issues) for issues in results.values())
+    streamlit_issues = sum(
+        1 for tool, issues in results.items()
+        for issue in issues
+        if is_streamlit_related(issue)
+    )
+
+    print(f"\n{COLORS['BOLD']}Analysis Complete:{COLORS['ENDC']}")
+    print(f"- Total issues found: {total_issues}")
+    print(f"- Streamlit-specific issues: {streamlit_issues}")
+    print(f"- Report saved to: {args.output}")
+ (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[223:237]
+==streamlit-analyzer-fixed:[276:289]
+    report.append("")
+
+    # Add streamlit-specific issues section
+    streamlit_issues = []
+    for tool_name, issues in results.items():
+        for issue in issues:
+            if is_streamlit_related(issue):
+                streamlit_issues.append({
+                    "tool": tool_name,
+                    **issue
+                })
+
+    if streamlit_issues: (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[300:307]
+==streamlit-analyzer-fixed:[352:359]
+    )
+    parser.add_argument(
+        "project_path",
+        help="Path to the Streamlit project to analyze"
+    )
+    parser.add_argument(
+        "--output", "-o", (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[110:120]
+==streamlit-analyzer-fixed:[98:109]
+            })
+        return issues
+    except json.JSONDecodeError:
+        # Handle case where pylint doesn't output valid JSON
+        return []
+
+def parse_mypy(output: str) -> List[Dict[str, Any]]:
+    """Parse mypy JSON output"""
+    try:
+        results = json.loads(output)
+        issues = [] (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[91:102]
+==streamlit-analyzer-fixed:[117:127]
+            })
+        return issues
+    except json.JSONDecodeError:
+        # Handle case where pylint doesn't output valid JSON
+        return []
+
+def parse_mypy(output: str) -> List[Dict[str, Any]]:
+    """Parse mypy JSON output"""
+    try:
+        results = json.loads(output)
+        issues = [] (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[314:327]
+==streamlit-analyzer-fixed:[376:389]
+    )
+
+    args = parser.parse_args()
+
+    # Check if project path exists
+    if not os.path.exists(args.project_path):
+        print(f"{COLORS['RED']}Error: Project path does not exist: {args.project_path}{COLORS['ENDC']}")
+        sys.exit(1)
+
+    # Determine which tools to run
+    tools_to_run = list(TOOLS.keys()) if args.tools == "all" else args.tools.split(",")
+
+    # Exclude bandit if specified (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[179:186]
+==streamlit-analyzer-fixed:[189:196]
+    try:
+        # Use subprocess with timeout and shell=False for security
+        process = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=False, (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[63:69]
+==streamlit-analyzer-fixed:[68:74]
+    },
+    "flake8": {
+        "cmd": "flake8",
+        "args": ["--format=json"],
+        "importance": "✅ Helps with readability",
+        "description": "Keeps formatting, line breaks, and indentations clean", (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[56:62]
+==streamlit-analyzer-fixed:[59:65]
+    },
+    "vulture": {
+        "cmd": "vulture",
+        "args": [],
+        "importance": "⚠️ Nice to have",
+        "description": "Finds unused UI elements or logic blocks (but may flag false positives due to Streamlit reactivity)", (duplicate-code)
+streamlit-doc-generator.py:1:0: R0801: Similar lines in 2 files
+==code-quality-checker-streamlit:[42:48]
+==streamlit-analyzer-fixed:[41:47]
+    },
+    "mypy": {
+        "cmd": "mypy",
+        "args": ["--json-report", "-"],
+        "importance": "✅ Very helpful",
+        "description": "Ensures Streamlit inputs (e.g. `st.date_input()`) are properly typed and used downstream", (duplicate-code)
+
+
+Report
+======
+1140 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |13     |NC         |NC         |30.77       |23.08    |
++---------+-------+-----------+-----------+------------+---------+
+|class    |5      |NC         |NC         |40.00       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |29     |NC         |NC         |82.76       |20.69    |
++---------+-------+-----------+-----------+------------+---------+
+|function |32     |NC         |NC         |93.75       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    grizly_app 
+      \-app (streamlit_app)
+    requests (css_audit)
+
+
+
+2405 lines have been analyzed
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |1466   |60.96 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |427    |17.75 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |176    |7.32  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |336    |13.97 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |324    |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |21     |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |54     |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |6      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++-------------------------------+------+--------+---------+-----------+
+|module                         |error |warning |refactor |convention |
++===============================+======+========+=========+===========+
+|css_audit                      |66.67 |25.93   |4.76     |21.60      |
++-------------------------------+------+--------+---------+-----------+
+|streamlit-analyzer-m1          |16.67 |0.00    |0.00     |0.00       |
++-------------------------------+------+--------+---------+-----------+
+|legal_logic                    |16.67 |0.00    |0.00     |0.00       |
++-------------------------------+------+--------+---------+-----------+
+|streamlit-doc-generator        |0.00  |37.04   |66.67    |33.33      |
++-------------------------------+------+--------+---------+-----------+
+|grizly_app.legal_logic_aligned |0.00  |9.26    |14.29    |2.78       |
++-------------------------------+------+--------+---------+-----------+
+|grizly_app.case_processor      |0.00  |9.26    |0.00     |2.47       |
++-------------------------------+------+--------+---------+-----------+
+|streamlit-analyzer-fixed       |0.00  |7.41    |9.52     |18.52      |
++-------------------------------+------+--------+---------+-----------+
+|grizly_app.app                 |0.00  |5.56    |0.00     |5.86       |
++-------------------------------+------+--------+---------+-----------+
+|code-quality-checker-streamlit |0.00  |3.70    |4.76     |12.35      |
++-------------------------------+------+--------+---------+-----------+
+|grizly_app.summary_generator   |0.00  |1.85    |0.00     |0.93       |
++-------------------------------+------+--------+---------+-----------+
+|grizly_app.motion_drafter      |0.00  |0.00    |0.00     |1.23       |
++-------------------------------+------+--------+---------+-----------+
+|embed_google_form_tab          |0.00  |0.00    |0.00     |0.62       |
++-------------------------------+------+--------+---------+-----------+
+|streamlit_app                  |0.00  |0.00    |0.00     |0.31       |
++-------------------------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++-------------------------------+------------+
+|message id                     |occurrences |
++===============================+============+
+|trailing-whitespace            |248         |
++-------------------------------+------------+
+|line-too-long                  |44          |
++-------------------------------+------------+
+|wrong-import-position          |19          |
++-------------------------------+------------+
+|unused-import                  |17          |
++-------------------------------+------------+
+|duplicate-code                 |12          |
++-------------------------------+------------+
+|broad-exception-caught         |12          |
++-------------------------------+------------+
+|wrong-import-order             |8           |
++-------------------------------+------------+
+|logging-fstring-interpolation  |7           |
++-------------------------------+------------+
+|unspecified-encoding           |6           |
++-------------------------------+------------+
+|too-many-locals                |5           |
++-------------------------------+------------+
+|import-error                   |4           |
++-------------------------------+------------+
+|trailing-newlines              |3           |
++-------------------------------+------------+
+|no-else-return                 |3           |
++-------------------------------+------------+
+|bare-except                    |3           |
++-------------------------------+------------+
+|unused-variable                |2           |
++-------------------------------+------------+
+|syntax-error                   |2           |
++-------------------------------+------------+
+|f-string-without-interpolation |2           |
++-------------------------------+------------+
+|broad-exception-raised         |2           |
++-------------------------------+------------+
+|ungrouped-imports              |1           |
++-------------------------------+------------+
+|try-except-raise               |1           |
++-------------------------------+------------+
+|too-many-return-statements     |1           |
++-------------------------------+------------+
+|subprocess-run-check           |1           |
++-------------------------------+------------+
+|reimported                     |1           |
++-------------------------------+------------+
+|import-outside-toplevel        |1           |
++-------------------------------+------------+
+
+
+
+
+-----------------------------------
+Your code has been rated at 6.24/10
+
